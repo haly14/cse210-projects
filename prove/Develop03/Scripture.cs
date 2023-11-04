@@ -1,59 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
 public class Scripture
 {
-    private string _text;
-    private List<string> _words;
+    private List<Word> _words;
 
     public Reference Reference { get; private set; }
-    public string Text
-    {
-        get { return _text; }
-        private set { _text = value; }
-    }
 
     public Scripture(string fullReference, string text)
     {
         Reference = new Reference(fullReference);
-        Text = text;
-        _words = new List<string>(text.Split(' '));
+        _words = text.Split(' ').Select(word => new Word(word)).ToList();
     }
 
     public void HideWords(int count)
     {
+        var wordsToHide = _words.Where(word => !word.IsHidden).ToList();
+        var random = new Random();
+
         for (int i = 0; i < count; i++)
         {
-            int index = GetRandomHiddenWordIndex();
-            if (index >= 0)
+            if (wordsToHide.Count > 0)
             {
-                _words[index] = new string('_', _words[index].Length);
+                int index = random.Next(wordsToHide.Count);
+                wordsToHide[index].Hide();
+                wordsToHide.RemoveAt(index);
             }
         }
-
-        Text = string.Join(" ", _words);
-    }
-
-    private int GetRandomHiddenWordIndex()
-    {
-        var hiddenWordsIndices = new List<int>();
-        for (int i = 0; i < _words.Count; i++)
-        {
-            if (_words[i].Contains("_"))
-            {
-                hiddenWordsIndices.Add(i);
-            }
-        }
-
-        if (hiddenWordsIndices.Count > 0)
-        {
-            Random random = new Random();
-            int randomIndex = random.Next(hiddenWordsIndices.Count);
-            return hiddenWordsIndices[randomIndex];
-        }
-
-        return -1;
     }
 
     public override string ToString()
     {
-        return $"{Reference.FullReference} - {Text}";
+        string displayedText = string.Join(" ", _words.Select(word => word.ToString()));
+        return $"{Reference.FullReference} - {displayedText}";
     }
 }

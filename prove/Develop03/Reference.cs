@@ -1,3 +1,5 @@
+using System;
+
 public class Reference
 {
     public string FullReference { get; private set; }
