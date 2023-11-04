@@ -1,17 +1,15 @@
 using System;
 
-public class Program
+class Program
 {
     static void Main(string[] args)
     {
         var scripture = new Scripture("Philippians 4:13", "I can do all things through Christ which strengtheneth me.");
-        scripture.HideWords(3); // Hide 3 random words initially
         Console.WriteLine(scripture);
 
-        int wordsToHide = 3;
         bool quit = false;
 
-        while (scripture.ToString().Contains('_') && !quit)
+        while (!quit)
         {
             Console.WriteLine("Press enter to continue or type 'quit' to finish.");
             string userInput = Console.ReadLine();
@@ -22,7 +20,7 @@ public class Program
             }
             else
             {
-                scripture.HideWords(wordsToHide);
+                scripture.HideWords(3); // Hide 3 random words
                 Console.Clear();
                 Console.WriteLine(scripture);
             }
