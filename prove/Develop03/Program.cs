@@ -11,7 +11,7 @@ public class Program
         int wordsToHide = 3;
         bool quit = false;
 
-        while (scripture.Reference.FullReference.Contains("_") && !quit)
+        while (scripture.ToString().Contains('_') && !quit)
         {
             Console.WriteLine("Press enter to continue or type 'quit' to finish.");
             string userInput = Console.ReadLine();

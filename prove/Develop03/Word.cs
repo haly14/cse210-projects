@@ -1,5 +1,3 @@
-using System;
-
 public class Word
 {
     public string Text { get; private set; }
