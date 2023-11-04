@@ -14,7 +14,33 @@ public class Reference
 
     private void ParseReference(string fullReference)
     {
-        // Implement parsing logic to extract book, chapter, and verse information
-        // You'll need to handle single verses and verse ranges like "Proverbs 3:5-6"
+        // Split the full reference by space and colon
+        string[] parts = fullReference.Split(' ', ':');
+
+        // Check if we have enough parts to proceed
+        if (parts.Length >= 2)
+        {
+            // The book name is in the first part
+            Book = parts[0];
+
+            // Parse the chapter and start verse
+            if (int.TryParse(parts[1], out int chapter))
+            {
+                Chapter = chapter;
+
+                // Check if we have a verse range
+                if (parts.Length >= 4 && parts[2] == "-" && int.TryParse(parts[3], out int endVerse))
+                {
+                    StartVerse = Chapter;
+                    EndVerse = endVerse;
+                }
+                else if (int.TryParse(parts[2], out int verse))
+                {
+                    StartVerse = verse;
+                    EndVerse = verse;
+                }
+            }
+        }
     }
 }
+
