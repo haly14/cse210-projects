@@ -20,7 +20,7 @@ class Program
             }
             else
             {
-                scripture.HideWords(3); // Hide 3 random words
+                scripture.HideWords(3);
                 Console.Clear();
                 Console.WriteLine(scripture);
             }

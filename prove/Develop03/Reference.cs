@@ -16,21 +16,16 @@ public class Reference
 
     private void ParseReference(string fullReference)
     {
-        // Split the full reference by space and colon
         string[] parts = fullReference.Split(' ', ':');
 
-        // Check if we have enough parts to proceed
         if (parts.Length >= 2)
         {
-            // The book name is in the first part
             Book = parts[0];
 
-            // Parse the chapter and start verse
             if (int.TryParse(parts[1], out int chapter))
             {
                 Chapter = chapter;
 
-                // Check if we have a verse range
                 if (parts.Length >= 4 && parts[2] == "-" && int.TryParse(parts[3], out int endVerse))
                 {
                     StartVerse = Chapter;
