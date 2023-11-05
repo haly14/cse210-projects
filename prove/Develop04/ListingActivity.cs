@@ -46,13 +46,13 @@ public class ListingActivity : Mindfulness
             {
                 Console.Write("Enter an item: ");
                 string item = Console.ReadLine();
-                listedItems.Add(item); // Add the entered item to the list
+                listedItems.Add(item);
             }
 
             break;
         }
 
-        int numberOfItemsListed = listedItems.Count; // Get the count of items
+        int numberOfItemsListed = listedItems.Count;
         Console.WriteLine($"Great work. You listed {numberOfItemsListed} items.");
 
         EndActivity();
