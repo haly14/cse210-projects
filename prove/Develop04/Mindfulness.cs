@@ -23,7 +23,7 @@ public class Mindfulness
     {
         Console.WriteLine("\nWell done!");
         DisplaySpinner(1);
-        Console.WriteLine($"\nYou have completed another {_duration} of the {_name}.");
+        Console.WriteLine($"\nYou have completed another {_duration} seconds of the {_name}.");
         DisplaySpinner(3); 
         Console.Clear();
         Program.DisplayMenu();

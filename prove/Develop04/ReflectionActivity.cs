@@ -33,10 +33,10 @@ public class ReflectionActivity : Mindfulness
 
         while (secondsElapsed < duration)
         {
-            Console.WriteLine("Consider the following prompt:");
+            Console.WriteLine("\nConsider the following prompt:");
             string randomPrompt = GetRandomPrompt();
-            Console.WriteLine($"---{randomPrompt}---");
-            Console.WriteLine("When you have something in mind, press Enter to continue.");
+            Console.WriteLine($"\n---{randomPrompt}---");
+            Console.WriteLine("\nWhen you have something in mind, press Enter to continue.");
             Console.ReadLine(); // Wait for user to press Enter
 
             if (!reflectionQuestionsAsked)

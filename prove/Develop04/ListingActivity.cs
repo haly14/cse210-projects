@@ -34,10 +34,10 @@ public class ListingActivity : Mindfulness
         int secondsElapsed = 0;
         while (secondsElapsed < duration)
         {
-            Console.WriteLine("List as many responses as you can to the following prompt: ");
+            Console.WriteLine("\nList as many responses as you can to the following prompt: ");
             string randomPrompt = GetRandomPrompt();
-            Console.WriteLine($"---{randomPrompt}---");
-            Console.WriteLine("You may begin in ");
+            Console.WriteLine($"\n---{randomPrompt}---");
+            Console.WriteLine("\nYou may begin in ");
             DisplayCountdown(5);
             secondsElapsed += 5;
 
@@ -54,6 +54,7 @@ public class ListingActivity : Mindfulness
 
         int numberOfItemsListed = listedItems.Count;
         Console.WriteLine($"Great work. You listed {numberOfItemsListed} items.");
+        DisplaySpinner(5);
 
         EndActivity();
     }

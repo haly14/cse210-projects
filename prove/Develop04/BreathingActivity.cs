@@ -14,8 +14,7 @@ public class BreathingActivity : Mindfulness
         int secondsElapsed = 0;
         while (secondsElapsed < duration)
         {
-            Console.WriteLine();
-            Console.Write("Breathe in...");
+            Console.Write("\nBreathe in...");
             DisplayCountdown(8);
             secondsElapsed += 8;
 
