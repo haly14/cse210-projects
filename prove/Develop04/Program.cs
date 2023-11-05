@@ -50,7 +50,7 @@ class Program
        
         else if (choice == 4)
         {
-            return; // return or break
+            return;
         }
 
         else
@@ -61,7 +61,7 @@ class Program
 
     private static int EnterDuration()
     {
-        Console.Write("How long, in seconds, would you like your session to be?");
+        Console.Write("How long, in seconds, would you like your session to be? ");
         return int.Parse(Console.ReadLine());
     }
 }
