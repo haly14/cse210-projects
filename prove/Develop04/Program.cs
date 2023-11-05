@@ -20,7 +20,6 @@ class Program
         if (choice == 1)
         {
             Console.Clear();
-
             string activityName = "Breathing Activity";
             string activityDescription = "This activity will help you relax by walking you through a slow breathing exercise. Clear your mind and focus on your breathing.";
             int activityDuration = EnterDuration();
