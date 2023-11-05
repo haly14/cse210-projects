@@ -42,9 +42,9 @@ public class ReflectionActivity : Mindfulness
             if (!reflectionQuestionsAsked)
             {
                 Console.WriteLine("How did you feel after this experience?");
-                DisplaySpinner(8);
+                DisplaySpinner(5);
                 Console.WriteLine("What was your favorite thing about this experience?");
-                DisplaySpinner(8);
+                DisplaySpinner(5);
                 reflectionQuestionsAsked = true;
             }
             

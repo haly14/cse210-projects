@@ -53,7 +53,7 @@ public class ListingActivity : Mindfulness
         }
 
         int numberOfItemsListed = listedItems.Count;
-        Console.WriteLine($"Great work. You listed {numberOfItemsListed} items.");
+        Console.WriteLine($"\nGreat work. You listed {numberOfItemsListed} items.");
         DisplaySpinner(5);
 
         EndActivity();
