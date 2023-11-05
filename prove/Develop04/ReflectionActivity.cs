@@ -15,6 +15,13 @@ public class ReflectionActivity : Mindfulness
         StartActivity();
     }
 
+    private string GetRandomPrompt()
+    {
+        Random random = new Random();
+        int index = random.Next(_prompts.Length);
+        return _prompts[index];
+    }
+
     public void StartReflection(int duration)
     {
         Console.Clear();
@@ -22,26 +29,28 @@ public class ReflectionActivity : Mindfulness
         DisplaySpinner(2);
 
         int secondsElapsed = 0;
+        bool reflectionQuestionsAsked = false;
+
         while (secondsElapsed < duration)
         {
             Console.WriteLine("Consider the following prompt:");
-            Console.WriteLine($"---{_prompts}---");
+            string randomPrompt = GetRandomPrompt();
+            Console.WriteLine($"---{randomPrompt}---");
             Console.WriteLine("When you have something in mind, press Enter to continue.");
             Console.ReadLine(); // Wait for user to press Enter
 
-            Console.WriteLine("How did you feel when the experience ended?");
-            DisplaySpinner(10);
-            Console.WriteLine("What was your favorite thing about this experience?");
-            DisplaySpinner(10);
+            if (!reflectionQuestionsAsked)
+            {
+                Console.WriteLine("How did you feel after this experience?");
+                DisplaySpinner(10);
+                Console.WriteLine("What was your favorite thing about this experience?");
+                DisplaySpinner(10);
+                reflectionQuestionsAsked = true;
+            }
+            
+            secondsElapsed++;
         }
 
         EndActivity();
-    }
-
-    private string GetRandomPrompt()
-    {
-        Random random = new Random();
-        int index = random.Next(_prompts.Length);
-        return _prompts[index];
     }
 }
