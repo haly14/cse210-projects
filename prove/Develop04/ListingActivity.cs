@@ -29,6 +29,8 @@ public class ListingActivity : Mindfulness
         Console.WriteLine("Get ready...");
         DisplaySpinner(2);
 
+        List<string> listedItems = new List<string>();
+
         int secondsElapsed = 0;
         while (secondsElapsed < duration)
         {
@@ -38,8 +40,20 @@ public class ListingActivity : Mindfulness
             Console.WriteLine("You may begin in ");
             DisplayCountdown(5);
             secondsElapsed += 5;
-            
+
+            DateTime startTime = DateTime.Now;
+            while (DateTime.Now - startTime < TimeSpan.FromSeconds(duration))
+            {
+                Console.Write("Enter an item: ");
+                string item = Console.ReadLine();
+                listedItems.Add(item); // Add the entered item to the list
+            }
+
+            break;
         }
+
+        int numberOfItemsListed = listedItems.Count; // Get the count of items
+        Console.WriteLine($"Great work. You listed {numberOfItemsListed} items.");
 
         EndActivity();
     }
