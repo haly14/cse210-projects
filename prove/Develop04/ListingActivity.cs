@@ -8,8 +8,15 @@ public class ListingActivity : Mindfulness
     public void StartListing(int duration)
     {
         Console.Clear();
-        Console.WriteLine("Great ready...");
-        DisplaySpinner(2); // Display spinner for 2 seconds
+        Console.WriteLine("Get ready...");
+        DisplaySpinner(2);
+
+        int secondsElapsed = 0;
+        while (secondsElapsed < duration)
+        {
+            Console.WriteLine("");
+
+        }
 
         EndActivity();
     }

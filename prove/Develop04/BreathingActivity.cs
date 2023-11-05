@@ -8,7 +8,7 @@ public class BreathingActivity : Mindfulness
     public void StartBreathing(int duration)
     {
         Console.Clear();
-        Console.WriteLine("Great ready...");
+        Console.WriteLine("Get ready...");
         DisplaySpinner(2);
 
         int secondsElapsed = 0;
