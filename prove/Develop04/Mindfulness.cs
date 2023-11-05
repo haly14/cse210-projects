@@ -22,7 +22,7 @@ public class Mindfulness
     public void EndActivity()
     {
         Console.WriteLine("\nWell done!");
-        DisplaySpinner(3); // Display spinner for 3 seconds
+        DisplaySpinner(1);
         Console.WriteLine($"\nYou have completed another {_name}.");
         DisplaySpinner(3); 
         Console.Clear();
