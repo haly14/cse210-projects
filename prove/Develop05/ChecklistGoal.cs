@@ -1,3 +1,4 @@
+using System;
 public class ChecklistGoal : Goal
 {
     public string Description { get; set; }

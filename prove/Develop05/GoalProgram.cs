@@ -1,3 +1,4 @@
+using System;
 public class GoalProgram
 {
     private List<Goal> goals;
@@ -58,7 +59,14 @@ public class GoalProgram
 
     private void CreateNewGoal()
     {
-        // Implement creating a new goal
+        Console.WriteLine("The types of goals are:");
+        Console.WriteLine("    1. Simple Goal");
+        Console.WriteLine("    2. Eternal Goal");
+        Console.WriteLine("    3. Checklist Goal");
+        Console.Write("Which type of goal would you like to create? ");
+        Console.Write("What is the name of your goal? ");
+        Console.Write("What is a short description of it? ");
+        Console.Write("What is the amount of points associated with this goal? ");
     }
 
     private void ListGoals()
