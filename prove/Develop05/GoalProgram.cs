@@ -73,7 +73,14 @@ public class GoalProgram
         string goalDescription = Console.ReadLine();
 
         Console.Write("What is the amount of points associated with this goal? ");
-        int goalPoints = int.Parse(Console.ReadLine());
+        int goalPoints;
+        bool isValidInput = int.TryParse(Console.ReadLine(), out goalPoints);
+
+        if (!isValidInput)
+        {
+            Console.WriteLine("Invalid input. Please enter a valid integer.");
+            // You might want to handle this situation accordingly (e.g., ask the user to enter the input again)
+        }
 
         Goal newGoal;
 
