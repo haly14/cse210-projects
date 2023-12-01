@@ -163,8 +163,8 @@ public class GoalProgram
         if (goal != null)
         {
             goal.MarkComplete();
-            Console.WriteLine("Event recorded!");
-            Console.WriteLine($"Congratulations! You have earned {goal.Points} points.");
+            Console.WriteLine($"Event recorded! {goal.OriginalPoints} points.");
+            UpdateTotalPoints();
         }
         else
         {
@@ -172,6 +172,11 @@ public class GoalProgram
         }
     }
 
+    private void UpdateTotalPoints()
+    {
+        int totalPoints = CalculateTotalPoints();
+        Console.WriteLine($"You have {totalPoints} points.");
+    }
 
     private int CalculateTotalPoints()
     {
