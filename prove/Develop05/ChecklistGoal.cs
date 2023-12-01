@@ -9,6 +9,7 @@ public class ChecklistGoal : Goal
     {
         TargetCount = targetCount;
         BonusPoints = bonusPoints;
+        OriginalPoints = points;
     }
 
 
