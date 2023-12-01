@@ -95,10 +95,7 @@ public class SaveLoadGoals
                         string[] eternalParts = goalDetails.Split(',');
                         if (eternalParts.Length == 3 && int.TryParse(eternalParts[1], out int eternalPoints))
                         {
-                            string name = eternalParts[0];
-                            string description = eternalParts[1];
-                            int points = eternalPoints;
-                            return new EternalGoal(name, description, points);
+                            return new EternalGoal(eternalParts[0], eternalParts[1], eternalPoints);
                         }
                         else
                         {
@@ -127,6 +124,14 @@ public class SaveLoadGoals
             {
                 Console.WriteLine($"Invalid format for goalLine: {goalLine}");
             }
+        }
+        catch (FormatException ex)
+        {
+            Console.WriteLine($"Format error in goalLine: {goalLine}. Details: {ex.Message}");
+        }
+        catch (IndexOutOfRangeException ex)
+        {
+            Console.WriteLine($"Index out of range in goalLine: {goalLine}. Details: {ex.Message}");
         }
         catch (Exception ex)
         {

@@ -28,30 +28,35 @@ public class GoalProgram
         Console.WriteLine("    6. Quit");
         Console.Write("Select a choice from the menu: ");
 
-        int choice = int.Parse(Console.ReadLine());
-
-        switch (choice)
+        if (int.TryParse(Console.ReadLine(), out int choice))
         {
-            case 1:
-                CreateNewGoal();
-                break;
-            case 2:
-                ListGoals();
-                break;
-            case 3:
-                SaveGoals();
-                break;
-            case 4:
-                LoadGoals();
-                break;
-            case 5:
-                RecordEvent();
-                break;
-            case 6:
-                return;
-            default:
-                Console.WriteLine("Invalid choice.");
-                break;
+            switch (choice)
+            {
+                case 1:
+                    CreateNewGoal();
+                    break;
+                case 2:
+                    ListGoals();
+                    break;
+                case 3:
+                    SaveGoals();
+                    break;
+                case 4:
+                    LoadGoals();
+                    break;
+                case 5:
+                    RecordEvent();
+                    break;
+                case 6:
+                    return;
+                default:
+                    Console.WriteLine("Invalid choice.");
+                    break;
+            }
+        }
+        else
+        {
+            Console.WriteLine("Invalid input. Please enter a valid integer.");
         }
 
         DisplayMenu();
