@@ -103,7 +103,6 @@ public class GoalProgram
         Console.WriteLine("Goal created successfully.");
     }
 
-
     private void ListGoals()
     {
         Console.WriteLine("\nThe goals are:");
@@ -121,7 +120,6 @@ public class GoalProgram
         }
     }
 
-
     private void SaveGoals()
     {
         Console.Write("\nWhat is the filename for the goal file? ");
@@ -130,7 +128,6 @@ public class GoalProgram
         saveLoadGoals.SaveGoals(filename, CalculateTotalPoints(), goals);
         Console.WriteLine("Goals saved successfully.");
     }
-
 
     private void LoadGoals()
     {
@@ -142,15 +139,14 @@ public class GoalProgram
         Console.WriteLine("Goals loaded successfully.");
     }
 
-    private void RecordEvent()
+    private void RecordEvent(string goalName = null)
     {
-        Console.WriteLine("\nWhich goal did you accomplish? ");
-        string goalName = Console.ReadLine();
-        RecordEvent(goalName);
-    }
+        if (goalName == null)
+        {
+            Console.WriteLine("\nWhich goal did you accomplish? ");
+            goalName = Console.ReadLine();
+        }
 
-    private void RecordEvent(string goalName)
-    {
         var goal = goals.Find(g => g.Name == goalName);
         if (goal != null)
         {
@@ -163,6 +159,7 @@ public class GoalProgram
             Console.WriteLine("Goal not found!");
         }
     }
+
 
     private int CalculateTotalPoints()
     {
