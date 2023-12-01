@@ -80,15 +80,38 @@ public class SaveLoadGoals
                 switch (goalType)
                 {
                     case "SimpleGoal":
-                        return new SimpleGoal(goalDetails);
+                        string[] simpleParts = goalDetails.Split(',');
+                        if (simpleParts.Length == 3 && int.TryParse(simpleParts[1], out int simplePoints))
+                        {
+                            return new SimpleGoal(simpleParts[0], simpleParts[1], simplePoints);
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Invalid format for SimpleGoal: {goalLine}");
+                        }
+                        break;
+
                     case "EternalGoal":
-                        return new EternalGoal(name, description, points);
+                        string[] eternalParts = goalDetails.Split(',');
+                        if (eternalParts.Length == 3 && int.TryParse(eternalParts[1], out int eternalPoints))
+                        {
+                            string name = eternalParts[0];
+                            string description = eternalParts[1];
+                            int points = eternalPoints;
+                            return new EternalGoal(name, description, points);
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Invalid format for EternalGoal: {goalLine}");
+                        }
+                        break;
+
                     case "ChecklistGoal":
                         // Parse additional information for ChecklistGoal and create an instance
                         string[] checklistParts = goalDetails.Split(',');
-                        if (checklistParts.Length == 5 && int.TryParse(checklistParts[2], out int points) && int.TryParse(checklistParts[3], out int targetCount) && int.TryParse(checklistParts[4], out int completedCount))
+                        if (checklistParts.Length == 5 && int.TryParse(checklistParts[2], out int checklistPoints) && int.TryParse(checklistParts[3], out int targetCount) && int.TryParse(checklistParts[4], out int completedCount))
                         {
-                            return new ChecklistGoal(checklistParts[0], checklistParts[1], points, targetCount, completedCount);
+                            return new ChecklistGoal(checklistParts[0], checklistParts[1], checklistPoints, targetCount, completedCount);
                         }
                         else
                         {
