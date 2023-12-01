@@ -59,24 +59,68 @@ public class GoalProgram
 
     private void CreateNewGoal()
     {
-        Console.WriteLine("The types of goals are:");
+        Console.WriteLine("\nThe types of goals are:");
         Console.WriteLine("    1. Simple Goal");
         Console.WriteLine("    2. Eternal Goal");
         Console.WriteLine("    3. Checklist Goal");
         Console.Write("Which type of goal would you like to create? ");
+        int goalTypeChoice = int.Parse(Console.ReadLine());
+
         Console.Write("What is the name of your goal? ");
+        string goalName = Console.ReadLine();
+
         Console.Write("What is a short description of it? ");
+        string goalDescription = Console.ReadLine();
+
         Console.Write("What is the amount of points associated with this goal? ");
+        int goalPoints = int.Parse(Console.ReadLine());
+
+        Goal newGoal;
+
+        switch (goalTypeChoice)
+        {
+            case 1:
+                newGoal = new SimpleGoal(goalName, goalDescription, goalPoints);
+                break;
+            case 2:
+                newGoal = new EternalGoal(goalName, goalDescription, goalPoints);
+                break;
+            case 3:
+                Console.Write("How many times does this goal need to be accomplished for a bonus? ");
+                int targetCount = int.Parse(Console.ReadLine());
+                Console.Write("What is the bonus for accomplishing the goal that many times? ");
+                int bonusPoints = int.Parse(Console.ReadLine());
+                newGoal = new ChecklistGoal(goalName, goalDescription, goalPoints, targetCount, bonusPoints);
+                break;
+            default:
+                Console.WriteLine("Invalid choice.");
+                return;
+        }
+
+        // Add the newly created goal to the list
+        goals.Add(newGoal);
+
+        Console.WriteLine("Goal created successfully.");
     }
+
 
     private void ListGoals()
     {
         Console.WriteLine("\nThe goals are:");
-        foreach (var goal in goals)
+
+        for (int i = 0; i < goals.Count; i++)
         {
-            goal.DisplayGoal();
+            Console.Write($"{i + 1}. [ ] {goals[i].Name} ({goals[i].Description})");
+
+            if (goals[i] is ChecklistGoal checklistGoal)
+            {
+                Console.Write($" -- Currently completed: {checklistGoal.CompletedCount}/{checklistGoal.TargetCount}");
+            }
+
+            Console.WriteLine();
         }
     }
+
 
     private void SaveGoals()
     {
@@ -86,6 +130,7 @@ public class GoalProgram
         saveLoadGoals.SaveGoals(filename, CalculateTotalPoints(), goals);
         Console.WriteLine("Goals saved successfully.");
     }
+
 
     private void LoadGoals()
     {

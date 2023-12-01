@@ -1,16 +1,16 @@
 using System;
 public class ChecklistGoal : Goal
 {
-    public string Description { get; set; }
     public int TargetCount { get; set; }
     public int CompletedCount { get; set; }
+    public int BonusPoints { get; set; }
 
-    public ChecklistGoal(string name, int targetCount, int completedCount) : base(name)
+    public ChecklistGoal(string name, string description, int points, int targetCount, int bonusPoints) : base(name, description, points)
     {
-        Description = ""; // or provide a default description
         TargetCount = targetCount;
-        CompletedCount = 0;
+        BonusPoints = bonusPoints;
     }
+
 
 
     public override void MarkComplete()

@@ -82,13 +82,13 @@ public class SaveLoadGoals
                     case "SimpleGoal":
                         return new SimpleGoal(goalDetails);
                     case "EternalGoal":
-                        return new EternalGoal(goalDetails);
+                        return new EternalGoal(name, description, points);
                     case "ChecklistGoal":
                         // Parse additional information for ChecklistGoal and create an instance
                         string[] checklistParts = goalDetails.Split(',');
-                        if (checklistParts.Length == 3 && int.TryParse(checklistParts[1], out int targetCount) && int.TryParse(checklistParts[2], out int completedCount))
+                        if (checklistParts.Length == 5 && int.TryParse(checklistParts[2], out int points) && int.TryParse(checklistParts[3], out int targetCount) && int.TryParse(checklistParts[4], out int completedCount))
                         {
-                            return new ChecklistGoal(checklistParts[0], targetCount, completedCount);
+                            return new ChecklistGoal(checklistParts[0], checklistParts[1], points, targetCount, completedCount);
                         }
                         else
                         {
