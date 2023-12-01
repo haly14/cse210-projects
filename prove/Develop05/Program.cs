@@ -29,6 +29,7 @@ public abstract class Goal
     public virtual void MarkComplete()
     {
         Completed = true;
+        Points += OriginalPoints;
     }
 
     public virtual void DisplayGoal()
