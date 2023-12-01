@@ -5,10 +5,4 @@ public class SimpleGoal : Goal
     {
         OriginalPoints = points;
     }
-
-    public override void MarkComplete()
-    {
-        base.MarkComplete();
-        Points += OriginalPoints;
-    }
 }
