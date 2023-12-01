@@ -69,50 +69,59 @@ public class GoalProgram
         Console.WriteLine("    2. Eternal Goal");
         Console.WriteLine("    3. Checklist Goal");
         Console.Write("Which type of goal would you like to create? ");
-        int goalTypeChoice = int.Parse(Console.ReadLine());
 
-        Console.Write("What is the name of your goal? ");
-        string goalName = Console.ReadLine();
-
-        Console.Write("What is a short description of it? ");
-        string goalDescription = Console.ReadLine();
-
-        Console.Write("What is the amount of points associated with this goal? ");
-        int goalPoints;
-        bool isValidInput = int.TryParse(Console.ReadLine(), out goalPoints);
-
-        if (!isValidInput)
+        if (int.TryParse(Console.ReadLine(), out int goalTypeChoice))
         {
-            Console.WriteLine("Invalid input. Please enter a valid integer.");
-            // You might want to handle this situation accordingly (e.g., ask the user to enter the input again)
+            Console.Write("What is the name of your goal? ");
+            string goalName = Console.ReadLine();
+
+            Console.Write("What is a short description of it? ");
+            string goalDescription = Console.ReadLine();
+
+            Console.Write("What is the amount of points associated with this goal? ");
+            if (int.TryParse(Console.ReadLine(), out int goalPoints))
+            {
+                Goal newGoal;
+
+                switch (goalTypeChoice)
+                {
+                    case 1:
+                        newGoal = new SimpleGoal(goalName, goalDescription, goalPoints);
+                        break;
+                    case 2:
+                        newGoal = new EternalGoal(goalName, goalDescription, goalPoints);
+                        break;
+                    case 3:
+                        Console.Write("How many times does this goal need to be accomplished for a bonus? ");
+                        if (int.TryParse(Console.ReadLine(), out int targetCount))
+                        {
+                            Console.Write("What is the bonus for accomplishing the goal that many times? ");
+                            if (int.TryParse(Console.ReadLine(), out int bonusPoints))
+                            {
+                                newGoal = new ChecklistGoal(goalName, goalDescription, goalPoints, targetCount, bonusPoints);
+                                break;
+                            }
+                        }
+                        Console.WriteLine("Invalid input. Please enter valid integers for target count and bonus points.");
+                        return;
+                    default:
+                        Console.WriteLine("Invalid choice.");
+                        return;
+                }
+
+                goals.Add(newGoal);
+
+                Console.WriteLine("Goal created successfully.");
+            }
+            else
+            {
+                Console.WriteLine("Invalid input. Please enter a valid integer for goal points.");
+            }
         }
-
-        Goal newGoal;
-
-        switch (goalTypeChoice)
+        else
         {
-            case 1:
-                newGoal = new SimpleGoal(goalName, goalDescription, goalPoints);
-                break;
-            case 2:
-                newGoal = new EternalGoal(goalName, goalDescription, goalPoints);
-                break;
-            case 3:
-                Console.Write("How many times does this goal need to be accomplished for a bonus? ");
-                int targetCount = int.Parse(Console.ReadLine());
-                Console.Write("What is the bonus for accomplishing the goal that many times? ");
-                int bonusPoints = int.Parse(Console.ReadLine());
-                newGoal = new ChecklistGoal(goalName, goalDescription, goalPoints, targetCount, bonusPoints);
-                break;
-            default:
-                Console.WriteLine("Invalid choice.");
-                return;
+            Console.WriteLine("Invalid input. Please enter a valid integer for goal type.");
         }
-
-        // Add the newly created goal to the list
-        goals.Add(newGoal);
-
-        Console.WriteLine("Goal created successfully.");
     }
 
     private void ListGoals()
