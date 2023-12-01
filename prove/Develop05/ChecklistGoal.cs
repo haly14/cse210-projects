@@ -20,16 +20,18 @@ public class ChecklistGoal : Goal
         if (CompletedCount == TargetCount)
         {
             base.MarkComplete();
-            Points += 500;
+            Points += BonusPoints;
         }
         else
         {
-            Points += 50;
+            Points += OriginalPoints;
         }
     }
 
     public override void DisplayGoal()
     {
+        string completionStatus = Completed ? "[x]" : "[ ]";
+        Console.WriteLine($"{completionStatus} {Name} ({Description})");
         Console.WriteLine($"{Name} - Points: {Points} - Completed: {(Completed ? "Yes" : "No")} - Completed {CompletedCount}/{TargetCount} times");
     }
 }

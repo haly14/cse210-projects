@@ -34,6 +34,7 @@ public abstract class Goal
 
     public virtual void DisplayGoal()
     {
-        Console.WriteLine($"{Name} - Points: {Points} - Completed: {(Completed ? "Yes" : "No")}");
+        string completionStatus = Completed ? "[x]" : "[ ]";
+        Console.WriteLine($"{completionStatus} {Name} ({Description})");
     }
 }
