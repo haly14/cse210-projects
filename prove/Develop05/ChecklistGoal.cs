@@ -31,7 +31,6 @@ public class ChecklistGoal : Goal
     public override void DisplayGoal()
     {
         string completionStatus = Completed ? "[x]" : "[ ]";
-        Console.WriteLine($"{completionStatus} {Name} ({Description})");
-        Console.WriteLine($"{Name} - Points: {Points} - Completed: {(Completed ? "Yes" : "No")} - Completed {CompletedCount}/{TargetCount} times");
+        Console.WriteLine($"{completionStatus} {Name} ({Description}) - Completed {CompletedCount}/{TargetCount} times");
     }
 }
