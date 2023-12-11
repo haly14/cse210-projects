@@ -12,8 +12,6 @@ public class ChecklistGoal : Goal
         OriginalPoints = points;
     }
 
-
-
     public override void MarkComplete()
     {
         CompletedCount++;

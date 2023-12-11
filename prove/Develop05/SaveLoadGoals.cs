@@ -41,10 +41,8 @@ public class SaveLoadGoals
         {
             using (StreamReader reader = new StreamReader(fileName))
             {
-                // Read user points
                 int userPoints = int.Parse(reader.ReadLine());
 
-                // Read and create goals
                 while (!reader.EndOfStream)
                 {
                     string goalLine = reader.ReadLine();
@@ -104,7 +102,6 @@ public class SaveLoadGoals
                         break;
 
                     case "ChecklistGoal":
-                        // Parse additional information for ChecklistGoal and create an instance
                         string[] checklistParts = goalDetails.Split(',');
                         if (checklistParts.Length == 5 && int.TryParse(checklistParts[2], out int checklistPoints) && int.TryParse(checklistParts[3], out int targetCount) && int.TryParse(checklistParts[4], out int completedCount))
                         {

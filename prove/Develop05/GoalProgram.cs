@@ -7,7 +7,6 @@ public class GoalProgram
     public GoalProgram()
     {
         goals = new List<Goal>();
-        // You may want to load goals from a file here using SaveLoadGoals
         LoadGoals();
     }
 
