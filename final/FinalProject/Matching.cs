@@ -394,6 +394,8 @@ public class Matching : Application
                 userAnswer = Console.ReadLine();
                 break;
         }
+        Points = totalPoints;
+        
         Console.WriteLine("\nPress enter to return to the Main Menu.");
         Console.ReadLine(); 
     }
