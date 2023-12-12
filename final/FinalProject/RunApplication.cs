@@ -28,9 +28,12 @@ public class RunApplication
         Console.WriteLine("    2. Play New Game");
         Console.WriteLine("    3. Quit");
         Console.WriteLine("Select Option 1 to review a short description of each major body system.");
-        Console.WriteLine("Select Option 2 to play a review game (Multiple Choice, Matching, or Short Answer Quiz).");
+        Console.WriteLine("Select Option 2 to play a review game (Multiple Choice or Matching).");
         Console.WriteLine("Select Option 3 to quit the application.");
         Console.WriteLine("\nFor each game option, you will select a question topic by entering a number 1-8 (corresponding to the 8 body systems).");
+        Console.WriteLine("\nYou will receive 2 points for every Multiple Choice question answered correctly.");
+        Console.WriteLine("You will receive 1 point for each termed matched correctly, for a total of 3 points per complete Matching question (there are 3 terms to match for each Matching question.).");
+        Console.WriteLine("Your point total will be displayed each time you finish a game.");
         Console.WriteLine("\nPress enter when you are finished reading the instructions to pull up the Main Menu.");
         Console.ReadLine(); 
         DisplayMenu();
