@@ -131,8 +131,6 @@ public class RunApplication
                     {
                         var newMatching = new Matching("", 0);
                         newMatching.GenerateRandomQuestion(questionNumber);
-                        gamePoints = 5;
-                        newMatching.SetPoints(gamePoints);
                         games.Add(newMatching);
                     }
                     else
