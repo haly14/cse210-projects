@@ -9,6 +9,7 @@ public class Matching : Application
     public void GenerateRandomQuestion(int questionNumber)
     {
         string userAnswer;
+        int totalPoints = 0;
 
         switch (questionNumber)
         {
@@ -24,12 +25,11 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "b")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 1;
+                    totalPoints += 1;
                 }
                 else
                 {
                     Console.WriteLine("Incorrect. The correct answer is 'b'.");
-                    Points = 0;
                 }
 
                 Console.Write("\nPlease enter a one letter answer for term 2. (no caps): ");
@@ -38,12 +38,11 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "a")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 1;
+                    totalPoints += 1;
                 }
                 else
                 {
                     Console.WriteLine("Incorrect. The correct answer is 'a'.");
-                    Points = 0;
                 }
 
                 Console.Write("\nPlease enter a one letter answer for term 3. (no caps): ");
@@ -52,12 +51,11 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "c")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 1;
+                    totalPoints += 1;
                 }
                 else
                 {
                     Console.WriteLine("Incorrect. The correct answer is 'c'.");
-                    Points = 0;
                 }
 
                 break;
@@ -74,12 +72,11 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "c")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 1;
+                    totalPoints += 1;
                 }
                 else
                 {
                     Console.WriteLine("Incorrect. The correct answer is 'c'.");
-                    Points = 0;
                 }
 
                 Console.Write("\nPlease enter a one letter answer for term 2. (no caps): ");
@@ -88,12 +85,11 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "a")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 1;
+                    totalPoints += 1;
                 }
                 else
                 {
                     Console.WriteLine("Incorrect. The correct answer is 'a'.");
-                    Points = 0;
                 }
 
                 Console.Write("\nPlease enter a one letter answer for term 3. (no caps): ");
@@ -102,12 +98,11 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "b")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 1;
+                    totalPoints += 1;
                 }
                 else
                 {
                     Console.WriteLine("Incorrect. The correct answer is 'b'.");
-                    Points = 0;
                 }
 
                 break;
@@ -124,12 +119,11 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "b")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 1;
+                    totalPoints += 1;
                 }
                 else
                 {
                     Console.WriteLine("Incorrect. The correct answer is 'b'.");
-                    Points = 0;
                 }
 
                 Console.Write("\nPlease enter a one letter answer for term 2. (no caps): ");
@@ -138,12 +132,11 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "c")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 1;
+                    totalPoints += 1;
                 }
                 else
                 {
                     Console.WriteLine("Incorrect. The correct answer is 'c'.");
-                    Points = 0;
                 }
 
                 Console.Write("\nPlease enter a one letter answer for term 3. (no caps): ");
@@ -152,12 +145,11 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "a")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 1;
+                    totalPoints += 1;
                 }
                 else
                 {
                     Console.WriteLine("Incorrect. The correct answer is 'a'.");
-                    Points = 0;
                 }
 
                 break;
@@ -174,12 +166,11 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "a")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 1;
+                    totalPoints += 1;
                 }
                 else
                 {
                     Console.WriteLine("Incorrect. The correct answer is 'a'.");
-                    Points = 0;
                 }
 
                 Console.Write("\nPlease enter a one letter answer for term 2. (no caps): ");
@@ -188,12 +179,11 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "c")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 1;
+                    totalPoints += 1;
                 }
                 else
                 {
                     Console.WriteLine("Incorrect. The correct answer is 'c'.");
-                    Points = 0;
                 }
 
                 Console.Write("\nPlease enter a one letter answer for term 3. (no caps): ");
@@ -202,12 +192,11 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "b")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 1;
+                    totalPoints += 1;
                 }
                 else
                 {
                     Console.WriteLine("Incorrect. The correct answer is 'b'.");
-                    Points = 0;
                 }
 
                 break;
@@ -224,12 +213,11 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "c")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 1;
+                    totalPoints += 1;
                 }
                 else
                 {
                     Console.WriteLine("Incorrect. The correct answer is 'c'.");
-                    Points = 0;
                 }
 
                 Console.Write("\nPlease enter a one letter answer for term 2. (no caps): ");
@@ -238,12 +226,11 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "b")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 1;
+                    totalPoints += 1;
                 }
                 else
                 {
                     Console.WriteLine("Incorrect. The correct answer is 'b'.");
-                    Points = 0;
                 }
 
                 Console.Write("\nPlease enter a one letter answer for term 3. (no caps): ");
@@ -252,12 +239,11 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "a")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 1;
+                    totalPoints += 1;
                 }
                 else
                 {
                     Console.WriteLine("Incorrect. The correct answer is 'a'.");
-                    Points = 0;
                 }
 
                 break;
@@ -274,12 +260,11 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "a")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 1;
+                    totalPoints += 1;
                 }
                 else
                 {
                     Console.WriteLine("Incorrect. The correct answer is 'a'.");
-                    Points = 0;
                 }
 
                 Console.Write("\nPlease enter a one letter answer for term 2. (no caps): ");
@@ -288,12 +273,11 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "b")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 1;
+                    totalPoints += 1;
                 }
                 else
                 {
                     Console.WriteLine("Incorrect. The correct answer is 'b'.");
-                    Points = 0;
                 }
 
                 Console.Write("\nPlease enter a one letter answer for term 3. (no caps): ");
@@ -302,12 +286,11 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "c")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 1;
+                    totalPoints += 1;
                 }
                 else
                 {
                     Console.WriteLine("Incorrect. The correct answer is 'c'.");
-                    Points = 0;
                 }
 
                 break;
@@ -324,12 +307,11 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "b")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 1;
+                    totalPoints += 1;
                 }
                 else
                 {
                     Console.WriteLine("Incorrect. The correct answer is 'b'.");
-                    Points = 0;
                 }
 
                 Console.Write("\nPlease enter a one letter answer for term 2. (no caps): ");
@@ -338,12 +320,11 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "c")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 1;
+                    totalPoints += 1;
                 }
                 else
                 {
                     Console.WriteLine("Incorrect. The correct answer is 'c'.");
-                    Points = 0;
                 }
 
                 Console.Write("\nPlease enter a one letter answer for term 3. (no caps): ");
@@ -352,12 +333,11 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "a")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 1;
+                    totalPoints += 1;
                 }
                 else
                 {
                     Console.WriteLine("Incorrect. The correct answer is 'a'.");
-                    Points = 0;
                 }
 
                 break;
@@ -374,12 +354,11 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "c")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 1;
+                    totalPoints += 1;
                 }
                 else
                 {
                     Console.WriteLine("Incorrect. The correct answer is 'c'.");
-                    Points = 0;
                 }
 
                 Console.Write("\nPlease enter a one letter answer for term 2. (no caps): ");
@@ -388,12 +367,11 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "a")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 1;
+                    totalPoints += 1;
                 }
                 else
                 {
                     Console.WriteLine("Incorrect. The correct answer is 'a'.");
-                    Points = 0;
                 }
 
                 Console.Write("\nPlease enter a one letter answer for term 3. (no caps): ");
@@ -402,12 +380,11 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "b")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 1;
+                    totalPoints += 1;
                 }
                 else
                 {
                     Console.WriteLine("Incorrect. The correct answer is 'b'.");
-                    Points = 0;
                 }
 
                 break;
