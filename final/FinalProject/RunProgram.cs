@@ -24,6 +24,8 @@ public class RunApplication
         Console.WriteLine("    8. The Immune System");
         Console.WriteLine("\nPlease remember the number associated with the body system that you want to study.");
         Console.WriteLine("You will use the number to select the associated question later on.");
+        Console.WriteLine("\nPress enter when you are finished reading the instructions to pull up the Main Menu.");
+        Console.ReadLine(); 
         DisplayMenu();
     }
 
@@ -65,6 +67,8 @@ public class RunApplication
                     Console.WriteLine("8. The Immune System");
                     Console.WriteLine("    Purpose: .");
                     Console.WriteLine("    Parts: .");
+                    Console.WriteLine("\nAre you finished reviewing? Press Enter to return to the main menu.");
+                    Console.ReadLine(); 
                     break;
                 case 2:
                     PlayNewGame();
