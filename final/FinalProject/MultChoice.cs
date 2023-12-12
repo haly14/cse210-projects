@@ -26,7 +26,7 @@ public class MultChoice : Application
                 if (userAnswer.ToLower() == "c")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 5;
+                    Points = 2;
                 }
                 else
                 {
@@ -48,7 +48,7 @@ public class MultChoice : Application
                 if (userAnswer.ToLower() == "d")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 5;
+                    Points = 2;
                 }
                 else
                 {
@@ -71,7 +71,7 @@ public class MultChoice : Application
                 if (userAnswer.ToLower() == "c")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 5;
+                    Points = 2;
                 }
                 else
                 {
@@ -94,7 +94,7 @@ public class MultChoice : Application
                 if (userAnswer.ToLower() == "a")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 5;
+                    Points = 2;
                 }
                 else
                 {
@@ -117,7 +117,7 @@ public class MultChoice : Application
                 if (userAnswer.ToLower() == "b")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 5;
+                    Points = 2;
                 }
                 else
                 {
@@ -140,7 +140,7 @@ public class MultChoice : Application
                 if (userAnswer.ToLower() == "d")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 5;
+                    Points = 2;
                 }
                 else
                 {
@@ -163,7 +163,7 @@ public class MultChoice : Application
                 if (userAnswer.ToLower() == "b")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 5;
+                    Points = 2;
                 }
                 else
                 {
@@ -186,7 +186,7 @@ public class MultChoice : Application
                 if (userAnswer.ToLower() == "a")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 5;
+                    Points = 2;
                 }
                 else
                 {

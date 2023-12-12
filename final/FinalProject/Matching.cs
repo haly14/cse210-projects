@@ -24,7 +24,7 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "b")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 5;
+                    Points = 1;
                 }
                 else
                 {
@@ -38,7 +38,7 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "a")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 5;
+                    Points = 1;
                 }
                 else
                 {
@@ -52,7 +52,7 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "c")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 5;
+                    Points = 1;
                 }
                 else
                 {
@@ -74,7 +74,7 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "c")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 5;
+                    Points = 1;
                 }
                 else
                 {
@@ -88,7 +88,7 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "a")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 5;
+                    Points = 1;
                 }
                 else
                 {
@@ -102,7 +102,7 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "b")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 5;
+                    Points = 1;
                 }
                 else
                 {
@@ -124,7 +124,7 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "b")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 5;
+                    Points = 1;
                 }
                 else
                 {
@@ -138,7 +138,7 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "c")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 5;
+                    Points = 1;
                 }
                 else
                 {
@@ -152,7 +152,7 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "a")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 5;
+                    Points = 1;
                 }
                 else
                 {
@@ -174,7 +174,7 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "a")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 5;
+                    Points = 1;
                 }
                 else
                 {
@@ -188,7 +188,7 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "c")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 5;
+                    Points = 1;
                 }
                 else
                 {
@@ -202,7 +202,7 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "b")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 5;
+                    Points = 1;
                 }
                 else
                 {
@@ -224,7 +224,7 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "c")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 5;
+                    Points = 1;
                 }
                 else
                 {
@@ -238,7 +238,7 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "b")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 5;
+                    Points = 1;
                 }
                 else
                 {
@@ -252,7 +252,7 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "a")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 5;
+                    Points = 1;
                 }
                 else
                 {
@@ -274,7 +274,7 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "a")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 5;
+                    Points = 1;
                 }
                 else
                 {
@@ -288,7 +288,7 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "b")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 5;
+                    Points = 1;
                 }
                 else
                 {
@@ -302,7 +302,7 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "c")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 5;
+                    Points = 1;
                 }
                 else
                 {
@@ -324,7 +324,7 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "b")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 5;
+                    Points = 1;
                 }
                 else
                 {
@@ -338,7 +338,7 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "c")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 5;
+                    Points = 1;
                 }
                 else
                 {
@@ -352,7 +352,7 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "a")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 5;
+                    Points = 1;
                 }
                 else
                 {
@@ -374,7 +374,7 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "c")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 5;
+                    Points = 1;
                 }
                 else
                 {
@@ -388,7 +388,7 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "a")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 5;
+                    Points = 1;
                 }
                 else
                 {
@@ -402,7 +402,7 @@ public class Matching : Application
                 if (userAnswer.ToLower() == "b")
                 {
                     Console.WriteLine("Correct!");
-                    Points = 5;
+                    Points = 1;
                 }
                 else
                 {
