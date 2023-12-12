@@ -108,12 +108,13 @@ public class RunApplication
 
             int gamePoints;
             string userAnswer;
+            int questionNumber;
 
             switch (gameTypeChoice)
             {
                 case 1:
                     Console.Write("Enter the question number (1 to 8): ");
-                    if (int.TryParse(Console.ReadLine(), out int questionNumber) && questionNumber >= 1 && questionNumber <= 8)
+                    if (int.TryParse(Console.ReadLine(), out questionNumber) && questionNumber >= 1 && questionNumber <= 8)
                     {
                         var newMultChoice = new MultChoice("", 0);
                         newMultChoice.GenerateRandomQuestion(questionNumber);
@@ -127,11 +128,19 @@ public class RunApplication
                     }
                     break;
                 case 2:
-                    Console.Write("Matching Question 1: ");
-                    userAnswer = Console.ReadLine();
-                    gamePoints = 5;
-                    var newMatching = new Matching(userAnswer, gamePoints);
-                    games.Add(newMatching);
+                    Console.Write("Enter the question number (1 to 8): ");
+                    if (int.TryParse(Console.ReadLine(), out questionNumber) && questionNumber >= 1 && questionNumber <= 8)
+                    {
+                        var newMatching = new Matching("", 0);
+                        newMatching.GenerateRandomQuestion(questionNumber);
+                        gamePoints = 5;
+                        newMatching.SetPoints(gamePoints);
+                        games.Add(newMatching);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid question number.");
+                    }
                     break;
                 case 3:
                     Console.WriteLine("\nPlease select an option from the menu below: ");
