@@ -6,7 +6,7 @@ public class Matching : Application
         OriginalPoints = points;
     }
 
-        private void AskQuestion(string category, string[] terms, string[] definitions)
+        private void AskQuestion(string category, string[] terms, string[] definitions, ref int totalPoints)
     {
         Console.Write($"\nMatching Question ({category}): ");
         Console.WriteLine("Match the terms to their correct definitions. Answer the questions in order: 1, 2, 3.");
@@ -15,8 +15,6 @@ public class Matching : Application
         {
             Console.WriteLine($"{i + 1}. {terms[i]}    {definitions[i]}");
         }
-
-        int totalPoints = 0;
 
         for (int i = 0; i < terms.Length; i++)
         {
@@ -38,13 +36,9 @@ public class Matching : Application
             else
             {
                 Console.WriteLine("Invalid input. Please enter a single letter.");
-                i--; // Ask the same question again
+                i--;
             }
         }
-
-        Points = totalPoints;
-        Console.WriteLine("\nPress enter to return to the Main Menu.");
-        Console.ReadLine();
     }
 
     public void GenerateRandomQuestion(int questionNumber)
@@ -56,42 +50,42 @@ public class Matching : Application
         {
             case 1:
                 AskQuestion("Integumentary System", new[] { "epidermis", "dermis", "hypodermis" },
-                            new[] { "a. middle layer of skin", "b. upper layer of skin", "c. lower layer of skin" });
+                            new[] { "a. middle layer of skin", "b. upper layer of skin", "c. lower layer of skin" }, ref totalPoints);
                 break;
 
             case 2:
                 AskQuestion("Skeletal System", new[] { "cartilage", "ligaments", "tendons" },
-                            new[] { "a. connect bone to bone", "b. connect muscle to bone", "c. connective tissue in joints, nose, ears" });
+                            new[] { "a. connect bone to bone", "b. connect muscle to bone", "c. connective tissue in joints, nose, ears" }, ref totalPoints);
                 break;
 
             case 3:
                 AskQuestion("Muscular System", new[] { "skeletal muscle", "smooth muscle", "cardiac muscle" },
-                            new[] { "a. muscle tissue found in the heart", "b. muscle tissue in limbs", "c. muscle found in and around organs" });
+                            new[] { "a. muscle tissue found in the heart", "b. muscle tissue in limbs", "c. muscle found in and around organs" }, ref totalPoints);
                 break;
 
             case 4:
                 AskQuestion("Nervous System", new[] { "cerebrum", "cerebellum", "brain stem" },
-                            new[] { "a. controls most senses, speech, reasoning, fine motor control", "b. controls automatic functions like breathing and heart rate", "c. controls posture and balance" });
+                            new[] { "a. controls most senses, speech, reasoning, fine motor control", "b. controls automatic functions like breathing and heart rate", "c. controls posture and balance" }, ref totalPoints);
                 break;
 
             case 5:
                 AskQuestion("Circulatory System", new[] { "arteries", "veins", "capillaries" },
-                            new[] { "a. connect arteries to veins", "b. carry blood back to the heart", "c. carry blood away from the heart" });
+                            new[] { "a. connect arteries to veins", "b. carry blood back to the heart", "c. carry blood away from the heart" }, ref totalPoints);
                 break;
 
             case 6:
                 AskQuestion("Respiratory System", new[] { "trachea", "bronchi", "alveoli" },
-                            new[] { "a. tube that carries air from mouth to lungs", "b. branches within lungs", "c. small air sacs at end of bronchioles where gas exchange occurs" });
+                            new[] { "a. tube that carries air from mouth to lungs", "b. branches within lungs", "c. small air sacs at end of bronchioles where gas exchange occurs" }, ref totalPoints);
                 break;
 
             case 7:
                 AskQuestion("Digestive System", new[] { "duodenum", "jejunum", "ileum" },
-                            new[] { "a. 3rd section of small intestine", "b. 1st section of small intestine", "c. 2nd section of small intestine" });
+                            new[] { "a. 3rd section of small intestine", "b. 1st section of small intestine", "c. 2nd section of small intestine" }, ref totalPoints);
                 break;
 
             case 8:
                 AskQuestion("Immune System", new[] { "NK cells", "macrophages", "neutrophils" },
-                            new[] { "a. engulf pathogens", "b. activators that can phagocytose bacteria and fungi", "c. use activation receptors to target virus-infected cells" });
+                            new[] { "a. engulf pathogens", "b. activators that can phagocytose bacteria and fungi", "c. use activation receptors to target virus-infected cells" }, ref totalPoints);
                 break;
 
             default:
