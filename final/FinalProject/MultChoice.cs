@@ -192,6 +192,8 @@ public class MultChoice : Application
                 Console.WriteLine("Invalid question number.");
                 userAnswer = Console.ReadLine();
                 UserAnswer = userAnswer;
+                Console.WriteLine("\nPress enter to return to the Main Menu.");
+                Console.ReadLine(); 
                 return;
         }
         

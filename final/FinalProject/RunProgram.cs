@@ -39,7 +39,6 @@ public class RunApplication
 
     private void DisplayMenu()
     {
-        Console.WriteLine($"\nYou currently have {CalculateTotalPoints()} points.");
         Console.WriteLine("\nAnatomy Learning Application! Main Menu: ");
         Console.WriteLine("    1. Major Body Systems Overview");
         Console.WriteLine("    2. Play New Game");
@@ -197,7 +196,7 @@ public class RunApplication
                     return;
             }
 
-            Console.WriteLine("Game recorded! Points updated.");
+            Console.WriteLine("Points updated.");
             UpdateTotalPoints();
 
         }
