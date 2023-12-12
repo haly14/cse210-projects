@@ -4,12 +4,10 @@ public class MultChoice : Application
     public MultChoice(string answer, int points) : base(answer, points)
     {
         OriginalPoints = points;
-
-        public bool IsAnswerCorrect()
-        {
-            string correctAnswer = "c";
-            return string.Equals(UserAnswer, correctAnswer, StringComparison.OrdinalIgnoreCase);
-        }
+    }
+    public bool IsAnswerCorrect(string userAnswer, string correctAnswer)
+    {
+        return string.Equals(userAnswer, correctAnswer, StringComparison.OrdinalIgnoreCase);
     }
 
     public void GenerateRandomQuestion(int questionNumber)
@@ -36,7 +34,7 @@ public class MultChoice : Application
                 {
                     Console.WriteLine("Incorrect. The correct answer is 'c'.");
                 }
-                    break;
+                break;
 
             case 2:
                 Console.WriteLine("\nMultiple Choice Question 2 (Skeletal System): ");
