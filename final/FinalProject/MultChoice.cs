@@ -11,198 +11,80 @@ public class MultChoice : Application
     {
         string userAnswer;
 
+        string[] questions = {
+            "Name the gland that secretes oil.",
+            "Name the connective tissue that connects bones to bones.",
+            "What is the correct name of the muscle in the shoulder?",
+            "Name the type of neurons that carry information back to the brain.",
+            "Which chamber of the heart does the blood enter after returning from the lungs?",
+            "What is the name of the tube that carries air from the nasal and oral cavities to the lungs?",
+            "Name the location where digestion begins in the body.",
+            "Which type of lymphocyte produces antibodies?"
+        };
+
+        string[][] options = {
+            new[] { "a. oil gland", "b. sweat gland", "c. sebaceous gland", "d. adipose gland" },
+            new[] { "a. cartilage", "b. tendons", "c. collagen", "d. ligaments" },
+            new[] { "a. latissimus dorsi", "b. triceps brachii", "c. deltoid", "d. humerus" },
+            new[] { "a. sensory neurons", "b. peripheral neurons", "c. sympathetic neurons", "d. motor neurons" },
+            new[] { "a. left ventricle", "b. left atrium", "c. right ventricle", "d. right atrium" },
+            new[] { "a. esophagus", "b. larynx", "c. alveoli", "d. trachea" },
+            new[] { "a. the esophagus", "b. the mouth", "c. the small intestine", "d. the stomach" },
+            new[] { "a. B cells", "b. cytotoxic T cells", "c. dendritic cells", "d. helper T cells" }
+        };
+
+        string[] correctAnswers = {"c", "d", "c", "a", "b", "d", "b", "a"};
+
+        if (questionNumber >= 1 && questionNumber <= 8)
+        {
+            Console.WriteLine($"\nMultiple Choice Question {questionNumber} ({GetSystemName(questionNumber)}): ");
+            Console.WriteLine(questions[questionNumber - 1]);
+
+            for (int i = 0; i < options[questionNumber - 1].Length; i++)
+            {
+                Console.WriteLine(options[questionNumber - 1][i]);
+            }
+
+            Console.Write("\nPlease enter a one letter answer (no caps): ");
+            userAnswer = Console.ReadLine();
+
+            if (userAnswer.ToLower() == correctAnswers[questionNumber - 1])
+            {
+                Console.WriteLine("Correct!");
+                Points = 2;
+            }
+            else
+            {
+                Console.WriteLine($"Incorrect. The correct answer is '{correctAnswers[questionNumber - 1]}'.");
+                Points = 0;
+            }
+
+        }
+        else
+        {
+            Console.WriteLine("Invalid question number.");
+            userAnswer = Console.ReadLine();
+            return;
+        }
+
+        Console.WriteLine("\nPress enter to return to the Main Menu.");
+        Console.ReadLine();
+    }
+
+    private string GetSystemName(int questionNumber)
+    {
         switch (questionNumber)
         {
-            case 1:
-                Console.WriteLine("\nMultiple Choice Question 1 (Integumentary System): ");
-                Console.WriteLine("Name the gland that secretes oil.");
-                Console.WriteLine("    a. oil gland");
-                Console.WriteLine("    b. sweat gland");
-                Console.WriteLine("    c. sebaceous gland");
-                Console.WriteLine("    d. adipose gland");
-                Console.Write("\nPlease enter a one letter answer (no caps): ");
-                userAnswer = Console.ReadLine();
-                
-                if (userAnswer.ToLower() == "c")
-                {
-                    Console.WriteLine("Correct!");
-                    Points = 2;
-                }
-                else
-                {
-                    Console.WriteLine("Incorrect. The correct answer is 'c'.");
-                    Points = 0;
-                }
-                break;
-
-            case 2:
-                Console.WriteLine("\nMultiple Choice Question 2 (Skeletal System): ");
-                Console.WriteLine("Name the connective tissue that connects bones to bones.");
-                Console.WriteLine("    a. cartilage");
-                Console.WriteLine("    b. tendons");
-                Console.WriteLine("    c. collagen");
-                Console.WriteLine("    d. ligaments");
-                Console.Write("\nPlease enter a one letter answer (no caps): ");
-                userAnswer = Console.ReadLine();
-
-                if (userAnswer.ToLower() == "d")
-                {
-                    Console.WriteLine("Correct!");
-                    Points = 2;
-                }
-                else
-                {
-                    Console.WriteLine("Incorrect. The correct answer is 'd'.");
-                    Points = 0;
-                }
-
-                break;
-
-            case 3:
-                Console.WriteLine("\nMultiple Choice Question 3 (Muscular System): ");
-                Console.WriteLine("What is the correct name of the muscle in the shoulder?");
-                Console.WriteLine("    a. latissimus dorsi");
-                Console.WriteLine("    b. triceps brachii");
-                Console.WriteLine("    c. deltoid");
-                Console.WriteLine("    d. humerus");
-                Console.Write("\nPlease enter a one letter answer (no caps): ");
-                userAnswer = Console.ReadLine();
-
-                if (userAnswer.ToLower() == "c")
-                {
-                    Console.WriteLine("Correct!");
-                    Points = 2;
-                }
-                else
-                {
-                    Console.WriteLine("Incorrect. The correct answer is 'c'.");
-                    Points = 0;
-                }
-
-                break;
-
-            case 4:
-                Console.WriteLine("\nMultiple Choice Question 4 (Nervous System): ");
-                Console.WriteLine("Name the type of neurons that carry information back to the brain.");
-                Console.WriteLine("    a. sensory neurons");
-                Console.WriteLine("    b. peripheral neurons");
-                Console.WriteLine("    c. sympathetic neurons");
-                Console.WriteLine("    d. motor neurons");
-                Console.Write("\nPlease enter a one letter answer (no caps): ");
-                userAnswer = Console.ReadLine();
-
-                if (userAnswer.ToLower() == "a")
-                {
-                    Console.WriteLine("Correct!");
-                    Points = 2;
-                }
-                else
-                {
-                    Console.WriteLine("Incorrect. The correct answer is 'a'.");
-                    Points = 0;
-                }
-
-                break;
-
-            case 5:
-                Console.WriteLine("\nMultiple Choice Question 5 (Circulatory System): ");
-                Console.WriteLine("Which chamber of the heart does the blood enter after returning from the lungs?");
-                Console.WriteLine("    a. left ventricle");
-                Console.WriteLine("    b. left atrium");
-                Console.WriteLine("    c. right ventricle");
-                Console.WriteLine("    d. right atrium");
-                Console.Write("\nPlease enter a one letter answer (no caps): ");
-                userAnswer = Console.ReadLine();
-
-                if (userAnswer.ToLower() == "b")
-                {
-                    Console.WriteLine("Correct!");
-                    Points = 2;
-                }
-                else
-                {
-                    Console.WriteLine("Incorrect. The correct answer is 'b'.");
-                    Points = 0;
-                }
-
-                break;
-
-            case 6:
-                Console.WriteLine("\nMultiple Choice Question 6 (Respiratory System): ");
-                Console.WriteLine("What is the name of the tube that carries air from the nasal and oral cavities to the lungs?");
-                Console.WriteLine("    a. esophagus");
-                Console.WriteLine("    b. larynx");
-                Console.WriteLine("    c. alveoli");
-                Console.WriteLine("    d. trachea");
-                Console.Write("\nPlease enter a one letter answer (no caps): ");
-                userAnswer = Console.ReadLine();
-
-                if (userAnswer.ToLower() == "d")
-                {
-                    Console.WriteLine("Correct!");
-                    Points = 2;
-                }
-                else
-                {
-                    Console.WriteLine("Incorrect. The correct answer is 'd'.");
-                    Points = 0;
-                }
-
-                break;
-
-            case 7:
-                Console.WriteLine("\nMultiple Choice Question 7 (Digestive System): ");
-                Console.WriteLine("Name the location where digestion begins in the body.");
-                Console.WriteLine("    a. the esophagus");
-                Console.WriteLine("    b. the mouth");
-                Console.WriteLine("    c. the small intestine");
-                Console.WriteLine("    d. the stomach");
-                Console.Write("\nPlease enter a one letter answer (no caps): ");
-                userAnswer = Console.ReadLine();
-
-                if (userAnswer.ToLower() == "b")
-                {
-                    Console.WriteLine("Correct!");
-                    Points = 2;
-                }
-                else
-                {
-                    Console.WriteLine("Incorrect. The correct answer is 'b'.");
-                    Points = 0;
-                }
-
-                break;
-
-            case 8:
-                Console.WriteLine("\nMultiple Choice Question 8 (Immune System): ");
-                Console.WriteLine("Which type of lymphocyte produces antibodies? ");
-                Console.WriteLine("    a. B cells");
-                Console.WriteLine("    b. cytotoxic T cells");
-                Console.WriteLine("    c. dendritic cells");
-                Console.WriteLine("    d. helper T cells");
-                Console.Write("\nPlease enter a one letter answer (no caps): ");
-                userAnswer = Console.ReadLine();
-
-                if (userAnswer.ToLower() == "a")
-                {
-                    Console.WriteLine("Correct!");
-                    Points = 2;
-                }
-                else
-                {
-                    Console.WriteLine("Incorrect. The correct answer is 'a'.");
-                    Points = 0;
-                }
-
-                break;
-
-            default:
-                Console.WriteLine("Invalid question number.");
-                userAnswer = Console.ReadLine();
-                return;
+            case 1: return "Integumentary System";
+            case 2: return "Skeletal System";
+            case 3: return "Muscular System";
+            case 4: return "Nervous System";
+            case 5: return "Circulatory System";
+            case 6: return "Respiratory System";
+            case 7: return "Digestive System";
+            case 8: return "Immune System";
+            default: return "";
         }
-        Console.WriteLine("\nPress enter to return to the Main Menu.");
-        Console.ReadLine(); 
-        
     }
+
 }

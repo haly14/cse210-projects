@@ -2,7 +2,7 @@ using System;
 using System.Runtime.CompilerServices;
 public class RunApplication
 {
-    private List<Application> games;
+    private readonly List<Application> games;
 
     public RunApplication()
     {
