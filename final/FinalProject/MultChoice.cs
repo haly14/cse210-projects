@@ -34,10 +34,12 @@ public class MultChoice : Application
                 if (userAnswer.ToLower() == "c")
                 {
                     Console.WriteLine("Correct!");
+                    Points = 5;
                 }
                 else
                 {
                     Console.WriteLine("Incorrect. The correct answer is 'c'.");
+                    Points = 0;
                 }
                 break;
 
