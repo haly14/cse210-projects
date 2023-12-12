@@ -56,10 +56,12 @@ public class MultChoice : Application
                 if (userAnswer.ToLower() == "d")
                 {
                     Console.WriteLine("Correct!");
+                    Points = 5;
                 }
                 else
                 {
                     Console.WriteLine("Incorrect. The correct answer is 'd'.");
+                    Points = 0;
                 }
 
                 break;
@@ -77,10 +79,12 @@ public class MultChoice : Application
                 if (userAnswer.ToLower() == "c")
                 {
                     Console.WriteLine("Correct!");
+                    Points = 5;
                 }
                 else
                 {
                     Console.WriteLine("Incorrect. The correct answer is 'c'.");
+                    Points = 0;
                 }
 
                 break;
@@ -98,10 +102,12 @@ public class MultChoice : Application
                 if (userAnswer.ToLower() == "a")
                 {
                     Console.WriteLine("Correct!");
+                    Points = 5;
                 }
                 else
                 {
                     Console.WriteLine("Incorrect. The correct answer is 'a'.");
+                    Points = 0;
                 }
 
                 break;
@@ -119,10 +125,12 @@ public class MultChoice : Application
                 if (userAnswer.ToLower() == "b")
                 {
                     Console.WriteLine("Correct!");
+                    Points = 5;
                 }
                 else
                 {
                     Console.WriteLine("Incorrect. The correct answer is 'b'.");
+                    Points = 0;
                 }
 
                 break;
@@ -140,10 +148,12 @@ public class MultChoice : Application
                 if (userAnswer.ToLower() == "d")
                 {
                     Console.WriteLine("Correct!");
+                    Points = 5;
                 }
                 else
                 {
                     Console.WriteLine("Incorrect. The correct answer is 'd'.");
+                    Points = 0;
                 }
 
                 break;
@@ -161,10 +171,12 @@ public class MultChoice : Application
                 if (userAnswer.ToLower() == "b")
                 {
                     Console.WriteLine("Correct!");
+                    Points = 5;
                 }
                 else
                 {
                     Console.WriteLine("Incorrect. The correct answer is 'b'.");
+                    Points = 0;
                 }
 
                 break;
@@ -182,10 +194,12 @@ public class MultChoice : Application
                 if (userAnswer.ToLower() == "a")
                 {
                     Console.WriteLine("Correct!");
+                    Points = 5;
                 }
                 else
                 {
                     Console.WriteLine("Incorrect. The correct answer is 'a'.");
+                    Points = 0;
                 }
 
                 break;

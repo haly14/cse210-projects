@@ -118,16 +118,7 @@ public class RunApplication
                     {
                         var newMultChoice = new MultChoice("", 0);
                         newMultChoice.GenerateRandomQuestion(questionNumber);
-                        if (newMultChoice.IsAnswerCorrect())
-                        {
-                            gamePoints = 5;
-                            newMultChoice.SetPoints(gamePoints);
-                            games.Add(newMultChoice);
-                        }
-                        else
-                        {
-                            Console.WriteLine("Incorrect answer. No points awarded.");
-                        }
+                        games.Add(newMultChoice);
                     }
                     else
                     {
