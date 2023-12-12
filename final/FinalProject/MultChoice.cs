@@ -39,4 +39,9 @@ public class MultChoice : Application
                 break;
         }
     }
+
+    public void SetPoints(int points)
+    {
+        Points = points;
+    }
 }

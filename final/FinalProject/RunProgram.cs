@@ -112,11 +112,19 @@ public class RunApplication
             switch (gameTypeChoice)
             {
                 case 1:
-                    Console.Write("Multiple Choice Question 1: ");
-                    userAnswer = Console.ReadLine();
-                    gamePoints = 5;
-                    var newMultChoice = new MultChoice(userAnswer, gamePoints);
-                    games.Add(newMultChoice);
+                    Console.Write("Enter the question number (1 to 8): ");
+                    if (int.TryParse(Console.ReadLine(), out int questionNumber) && questionNumber >= 1 && questionNumber <= 8)
+                    {
+                        var newMultChoice = new MultChoice("", 0);
+                        newMultChoice.GenerateRandomQuestion(questionNumber);
+                        gamePoints = 5;
+                        newMultChoice.SetPoints(gamePoints);
+                        games.Add(newMultChoice);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid question number.");
+                    }
                     break;
                 case 2:
                     Console.Write("Matching Question 1: ");
