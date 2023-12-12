@@ -7,14 +7,6 @@ public class MultChoice : Application
         OriginalPoints = points;
     }
 
-    public string UserAnswer { get; private set; }
-    public string CorrectAnswer { get; private set; }
-
-    public bool IsAnswerCorrect()
-    {
-        return string.Equals(UserAnswer, CorrectAnswer, StringComparison.OrdinalIgnoreCase);
-    }
-
     public void GenerateRandomQuestion(int questionNumber)
     {
         string userAnswer;
@@ -207,15 +199,10 @@ public class MultChoice : Application
             default:
                 Console.WriteLine("Invalid question number.");
                 userAnswer = Console.ReadLine();
-                UserAnswer = userAnswer;
                 return;
         }
         Console.WriteLine("\nPress enter to return to the Main Menu.");
         Console.ReadLine(); 
         
-    }
-    public void SetPoints(int points)
-    {
-        Points = points;
     }
 }
