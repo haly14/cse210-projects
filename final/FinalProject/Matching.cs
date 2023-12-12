@@ -64,22 +64,49 @@ public class Matching : Application
 
             case 2:
                 Console.Write("\nMatching Question 2 (Skeletal System): ");
-                Console.WriteLine("Name the connective tissue that connects bones to bones.");
-                Console.WriteLine("    a. cartilage");
-                Console.WriteLine("    b. tendons");
-                Console.WriteLine("    c. collagen");
-                Console.WriteLine("    d. ligaments");
-                Console.Write("\nPlease enter a one letter answer (no caps): ");
+                Console.WriteLine("Match the terms to their correct definitions. Answer the questions in order: 1, 2, 3.");
+                Console.WriteLine("1. cartilage    a. connect bone to bone");
+                Console.WriteLine("2. ligaments    b. connect muscle to bone");
+                Console.WriteLine("3. tendons      c. connective tissue in joints, nose, ears");
+                Console.Write("\nPlease enter a one letter answer for term 1. (no caps): ");
                 userAnswer = Console.ReadLine();
-
-                if (userAnswer.ToLower() == "d")
+                
+                if (userAnswer.ToLower() == "c")
                 {
                     Console.WriteLine("Correct!");
                     Points = 5;
                 }
                 else
                 {
-                    Console.WriteLine("Incorrect. The correct answer is 'd'.");
+                    Console.WriteLine("Incorrect. The correct answer is 'c'.");
+                    Points = 0;
+                }
+
+                Console.Write("\nPlease enter a one letter answer for term 2. (no caps): ");
+                userAnswer = Console.ReadLine();
+
+                if (userAnswer.ToLower() == "a")
+                {
+                    Console.WriteLine("Correct!");
+                    Points = 5;
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect. The correct answer is 'a'.");
+                    Points = 0;
+                }
+
+                Console.Write("\nPlease enter a one letter answer for term 3. (no caps): ");
+                userAnswer = Console.ReadLine();
+
+                if (userAnswer.ToLower() == "b")
+                {
+                    Console.WriteLine("Correct!");
+                    Points = 5;
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect. The correct answer is 'b'.");
                     Points = 0;
                 }
 
@@ -87,12 +114,189 @@ public class Matching : Application
 
             case 3:
                 Console.Write("\nMatching Question 3 (Muscular System): ");
-                Console.WriteLine("What is the correct name of the muscle in the shoulder?");
-                Console.WriteLine("    a. latissimus dorsi");
-                Console.WriteLine("    b. triceps brachii");
-                Console.WriteLine("    c. deltoid");
-                Console.WriteLine("    d. humerus");
-                Console.Write("\nPlease enter a one letter answer (no caps): ");
+                Console.WriteLine("Match the terms to their correct definitions. Answer the questions in order: 1, 2, 3.");
+                Console.WriteLine("1. skeletal muscle    a. muscle tissue found in the heart");
+                Console.WriteLine("2. smooth muscle      b. muscle tissue in limbs");
+                Console.WriteLine("3. cardiac muscle     c. muscle found in and around organs");
+                Console.Write("\nPlease enter a one letter answer for term 1. (no caps): ");
+                userAnswer = Console.ReadLine();
+                
+                if (userAnswer.ToLower() == "b")
+                {
+                    Console.WriteLine("Correct!");
+                    Points = 5;
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect. The correct answer is 'b'.");
+                    Points = 0;
+                }
+
+                Console.Write("\nPlease enter a one letter answer for term 2. (no caps): ");
+                userAnswer = Console.ReadLine();
+
+                if (userAnswer.ToLower() == "c")
+                {
+                    Console.WriteLine("Correct!");
+                    Points = 5;
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect. The correct answer is 'c'.");
+                    Points = 0;
+                }
+
+                Console.Write("\nPlease enter a one letter answer for term 3. (no caps): ");
+                userAnswer = Console.ReadLine();
+
+                if (userAnswer.ToLower() == "a")
+                {
+                    Console.WriteLine("Correct!");
+                    Points = 5;
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect. The correct answer is 'a'.");
+                    Points = 0;
+                }
+
+                break;
+
+            case 4:
+                Console.Write("\nMatching Question 4 (Nervous System): ");
+                Console.WriteLine("Match the terms to their correct definitions. Answer the questions in order: 1, 2, 3.");
+                Console.WriteLine("1. cerebrum     a. controls touch, vision, hearing, speech, reasoning, fine motor control");
+                Console.WriteLine("2. cerebellum   b. controls most automatic functions like breathing and heart rate");
+                Console.WriteLine("3. brain stem   c. controls posture and balance");
+                Console.Write("\nPlease enter a one letter answer for term 1. (no caps): ");
+                userAnswer = Console.ReadLine();
+                
+                if (userAnswer.ToLower() == "a")
+                {
+                    Console.WriteLine("Correct!");
+                    Points = 5;
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect. The correct answer is 'a'.");
+                    Points = 0;
+                }
+
+                Console.Write("\nPlease enter a one letter answer for term 2. (no caps): ");
+                userAnswer = Console.ReadLine();
+
+                if (userAnswer.ToLower() == "c")
+                {
+                    Console.WriteLine("Correct!");
+                    Points = 5;
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect. The correct answer is 'c'.");
+                    Points = 0;
+                }
+
+                Console.Write("\nPlease enter a one letter answer for term 3. (no caps): ");
+                userAnswer = Console.ReadLine();
+
+                if (userAnswer.ToLower() == "b")
+                {
+                    Console.WriteLine("Correct!");
+                    Points = 5;
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect. The correct answer is 'b'.");
+                    Points = 0;
+                }
+
+                break;
+
+            case 5:
+                Console.Write("\nMatching Question 5 (Circulatory System): ");
+                Console.WriteLine("Match the terms to their correct definitions. Answer the questions in order: 1, 2, 3.");
+                Console.WriteLine("1. arteries      a. connect arteries to veins");
+                Console.WriteLine("2. veins         b. carry blood back to the heart");
+                Console.WriteLine("3. capillaries   c. carry blood away from the heart");
+                Console.Write("\nPlease enter a one letter answer for term 1. (no caps): ");
+                userAnswer = Console.ReadLine();
+                
+                if (userAnswer.ToLower() == "c")
+                {
+                    Console.WriteLine("Correct!");
+                    Points = 5;
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect. The correct answer is 'c'.");
+                    Points = 0;
+                }
+
+                Console.Write("\nPlease enter a one letter answer for term 2. (no caps): ");
+                userAnswer = Console.ReadLine();
+
+                if (userAnswer.ToLower() == "b")
+                {
+                    Console.WriteLine("Correct!");
+                    Points = 5;
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect. The correct answer is 'b'.");
+                    Points = 0;
+                }
+
+                Console.Write("\nPlease enter a one letter answer for term 3. (no caps): ");
+                userAnswer = Console.ReadLine();
+
+                if (userAnswer.ToLower() == "a")
+                {
+                    Console.WriteLine("Correct!");
+                    Points = 5;
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect. The correct answer is 'a'.");
+                    Points = 0;
+                }
+
+                break;
+
+            case 6:
+                Console.Write("\nMatching Question 6 (Respiratory System): ");
+                Console.WriteLine("Match the terms to their correct definitions. Answer the questions in order: 1, 2, 3.");
+                Console.WriteLine("1. trachea      a. tube that carries air from nasal and oral cavities to the lungs");
+                Console.WriteLine("2. bronchi      b. branches within lungs");
+                Console.WriteLine("3. alveoli      c. small air sacs at end of bronchioles where gas exchange occurs");
+                Console.Write("\nPlease enter a one letter answer for term 1. (no caps): ");
+                userAnswer = Console.ReadLine();
+                
+                if (userAnswer.ToLower() == "a")
+                {
+                    Console.WriteLine("Correct!");
+                    Points = 5;
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect. The correct answer is 'a'.");
+                    Points = 0;
+                }
+
+                Console.Write("\nPlease enter a one letter answer for term 2. (no caps): ");
+                userAnswer = Console.ReadLine();
+
+                if (userAnswer.ToLower() == "b")
+                {
+                    Console.WriteLine("Correct!");
+                    Points = 5;
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect. The correct answer is 'b'.");
+                    Points = 0;
+                }
+
+                Console.Write("\nPlease enter a one letter answer for term 3. (no caps): ");
                 userAnswer = Console.ReadLine();
 
                 if (userAnswer.ToLower() == "c")
@@ -108,14 +312,41 @@ public class Matching : Application
 
                 break;
 
-            case 4:
-                Console.Write("\nMatching Question 4 (Nervous System): ");
-                Console.WriteLine("Name the type of neurons that carry information back to the brain.");
-                Console.WriteLine("    a. sensory neurons");
-                Console.WriteLine("    b. peripheral neurons");
-                Console.WriteLine("    c. sympathetic neurons");
-                Console.WriteLine("    d. motor neurons");
-                Console.Write("\nPlease enter a one letter answer (no caps): ");
+            case 7:
+                Console.Write("\nMatching Question 7 (Digestive System): ");
+                Console.WriteLine("Match the terms to their correct definitions. Answer the questions in order: 1, 2, 3.");
+                Console.WriteLine("1. duodenum     a. 3rd section of small intestine");
+                Console.WriteLine("2. jejunum      b. 1st section of small intestine");
+                Console.WriteLine("3. ileum        c. 2nd section of small intestine");
+                Console.Write("\nPlease enter a one letter answer for term 1. (no caps): ");
+                userAnswer = Console.ReadLine();
+                
+                if (userAnswer.ToLower() == "b")
+                {
+                    Console.WriteLine("Correct!");
+                    Points = 5;
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect. The correct answer is 'b'.");
+                    Points = 0;
+                }
+
+                Console.Write("\nPlease enter a one letter answer for term 2. (no caps): ");
+                userAnswer = Console.ReadLine();
+
+                if (userAnswer.ToLower() == "c")
+                {
+                    Console.WriteLine("Correct!");
+                    Points = 5;
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect. The correct answer is 'c'.");
+                    Points = 0;
+                }
+
+                Console.Write("\nPlease enter a one letter answer for term 3. (no caps): ");
                 userAnswer = Console.ReadLine();
 
                 if (userAnswer.ToLower() == "a")
@@ -126,75 +357,6 @@ public class Matching : Application
                 else
                 {
                     Console.WriteLine("Incorrect. The correct answer is 'a'.");
-                    Points = 0;
-                }
-
-                break;
-
-            case 5:
-                Console.Write("\nMatching Question 5 (Circulatory System): ");
-                Console.WriteLine("Which chamber of the heart does the blood enter after returning from the lungs?");
-                Console.WriteLine("    a. left ventricle");
-                Console.WriteLine("    b. left atrium");
-                Console.WriteLine("    c. right ventricle");
-                Console.WriteLine("    d. right atrium");
-                Console.Write("\nPlease enter a one letter answer (no caps): ");
-                userAnswer = Console.ReadLine();
-
-                if (userAnswer.ToLower() == "b")
-                {
-                    Console.WriteLine("Correct!");
-                    Points = 5;
-                }
-                else
-                {
-                    Console.WriteLine("Incorrect. The correct answer is 'b'.");
-                    Points = 0;
-                }
-
-                break;
-
-            case 6:
-                Console.Write("\nMatching Question 6 (Respiratory System): ");
-                Console.WriteLine("What is the name of the tube that carries air from the nasal and oral cavities to the lungs?");
-                Console.WriteLine("    a. esophagus");
-                Console.WriteLine("    b. larynx");
-                Console.WriteLine("    c. alveoli");
-                Console.WriteLine("    d. trachea");
-                Console.Write("\nPlease enter a one letter answer (no caps): ");
-                userAnswer = Console.ReadLine();
-
-                if (userAnswer.ToLower() == "d")
-                {
-                    Console.WriteLine("Correct!");
-                    Points = 5;
-                }
-                else
-                {
-                    Console.WriteLine("Incorrect. The correct answer is 'd'.");
-                    Points = 0;
-                }
-
-                break;
-
-            case 7:
-                Console.Write("\nMatching Question 7 (Digestive System): ");
-                Console.WriteLine("Name the location where digestion begins in the body.");
-                Console.WriteLine("    a. the esophagus");
-                Console.WriteLine("    b. the mouth");
-                Console.WriteLine("    c. the small intestine");
-                Console.WriteLine("    d. the stomach");
-                Console.Write("\nPlease enter a one letter answer (no caps): ");
-                userAnswer = Console.ReadLine();
-
-                if (userAnswer.ToLower() == "b")
-                {
-                    Console.WriteLine("Correct!");
-                    Points = 5;
-                }
-                else
-                {
-                    Console.WriteLine("Incorrect. The correct answer is 'b'.");
                     Points = 0;
                 }
 
@@ -202,12 +364,25 @@ public class Matching : Application
 
             case 8:
                 Console.Write("\nMatching Question 8 (Immune System): ");
-                Console.WriteLine("Which type of lymphocyte produces antibodies? ");
-                Console.WriteLine("    a. B cells");
-                Console.WriteLine("    b. cytotoxic T cells");
-                Console.WriteLine("    c. dendritic cells");
-                Console.WriteLine("    d. helper T cells");
-                Console.Write("\nPlease enter a one letter answer (no caps): ");
+                Console.WriteLine("Match the terms to their correct definitions. Answer the questions in order: 1, 2, 3.");
+                Console.WriteLine("1. NK cells        a. eradicate pathogens by engulfing them");
+                Console.WriteLine("2. macrophages     b. eradicate bacteria and fungi and activate other cells");
+                Console.WriteLine("3. neutrophils     c. use activation receptors to target virus-infected cells");
+                Console.Write("\nPlease enter a one letter answer for term 1. (no caps): ");
+                userAnswer = Console.ReadLine();
+                
+                if (userAnswer.ToLower() == "c")
+                {
+                    Console.WriteLine("Correct!");
+                    Points = 5;
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect. The correct answer is 'c'.");
+                    Points = 0;
+                }
+
+                Console.Write("\nPlease enter a one letter answer for term 2. (no caps): ");
                 userAnswer = Console.ReadLine();
 
                 if (userAnswer.ToLower() == "a")
@@ -218,6 +393,20 @@ public class Matching : Application
                 else
                 {
                     Console.WriteLine("Incorrect. The correct answer is 'a'.");
+                    Points = 0;
+                }
+
+                Console.Write("\nPlease enter a one letter answer for term 3. (no caps): ");
+                userAnswer = Console.ReadLine();
+
+                if (userAnswer.ToLower() == "b")
+                {
+                    Console.WriteLine("Correct!");
+                    Points = 5;
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect. The correct answer is 'b'.");
                     Points = 0;
                 }
 

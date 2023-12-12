@@ -31,11 +31,5 @@ public abstract class Application
         Completed = true;
         Points += correctAnswer ? OriginalPoints : 0;
     }
-
-    public virtual void DisplayPoints()
-    {
-        string completionStatus = Completed ? "[x]" : "[ ]";
-        Console.WriteLine($"{completionStatus} {Answer})");
-    }
     
 }
