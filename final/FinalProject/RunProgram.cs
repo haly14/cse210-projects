@@ -12,11 +12,6 @@ public class RunApplication
 
     public void Run()
     {
-        DisplayMenu();
-    }
-
-    private void DisplayMenu()
-    {
         Console.WriteLine("\nWelcome to the Anatomy Learning Application!");
         Console.WriteLine("\nThis application will help you review the 8 major body systems studied in Anatomy: ");
         Console.WriteLine("    1. The Integumentary System");
@@ -29,8 +24,12 @@ public class RunApplication
         Console.WriteLine("    8. The Immune System");
         Console.WriteLine("\nPlease remember the number associated with the body system that you want to study.");
         Console.WriteLine("You will use the number to select the associated question later on.");
+        DisplayMenu();
+    }
 
-        Console.WriteLine($"\nYou have {CalculateTotalPoints()} points.");
+    private void DisplayMenu()
+    {
+        Console.WriteLine($"\nYou currently have {CalculateTotalPoints()} points.");
         Console.WriteLine("\nPlease select an option from the menu below: ");
         Console.WriteLine("    1. Major Body Systems Overview");
         Console.WriteLine("    2. Play New Game");
