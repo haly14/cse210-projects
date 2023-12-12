@@ -99,7 +99,7 @@ public class RunApplication
         Console.WriteLine("\nThe game options are:");
         Console.WriteLine("    1. Multiple Choice");
         Console.WriteLine("    2. Matching");
-        Console.WriteLine("    3. Quit");
+        Console.WriteLine("    3. Return to Main Menu");
         Console.Write("Which game do you want to play? ");
 
         if (int.TryParse(Console.ReadLine(), out int gameTypeChoice))
