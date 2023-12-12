@@ -31,6 +31,7 @@ public class RunApplication
         Console.WriteLine("Select Option 1 to review a short description of each major body system.");
         Console.WriteLine("Select Option 2 to play a review game (Multiple Choice, Matching, or Short Answer Quiz).");
         Console.WriteLine("Select Option 3 to quit the application.");
+        Console.WriteLine("\nFor each game option, you will select a question topic by entering a number 1-8 (corresponding to the 8 body systems).");
         Console.WriteLine("\nPress enter when you are finished reading the instructions to pull up the Main Menu.");
         Console.ReadLine(); 
         DisplayMenu();
@@ -51,29 +52,29 @@ public class RunApplication
             {
                 case 1:
                     Console.WriteLine("1. The Integumentary System");
-                    Console.WriteLine("    Purpose: .");
-                    Console.WriteLine("    Parts: .");
+                    Console.WriteLine("    Purpose: Protection.");
+                    Console.WriteLine("    Parts: Skin, hair, nails, glands, nerve endings.");
                     Console.WriteLine("2. The Skeletal System");
-                    Console.WriteLine("    Purpose: .");
-                    Console.WriteLine("    Parts: .");
+                    Console.WriteLine("    Purpose: Structural support, protection, movement.");
+                    Console.WriteLine("    Parts: Bones, connective tissues.");
                     Console.WriteLine("3. The Muscular System");
-                    Console.WriteLine("    Purpose: .");
-                    Console.WriteLine("    Parts: .");
+                    Console.WriteLine("    Purpose: Movement.");
+                    Console.WriteLine("    Parts: Muscles, connective tissues.");
                     Console.WriteLine("4. The Nervous System");
-                    Console.WriteLine("    Purpose: .");
-                    Console.WriteLine("    Parts: .");
+                    Console.WriteLine("    Purpose: Sensory and motor body contol.");
+                    Console.WriteLine("    Parts: Brain, spinal cord, neurons.");
                     Console.WriteLine("5. The Circulatory System");
-                    Console.WriteLine("    Purpose: .");
-                    Console.WriteLine("    Parts: .");
+                    Console.WriteLine("    Purpose: Circulate blood components to lungs and body cells.");
+                    Console.WriteLine("    Parts: Heart, blood vessels, blood.");
                     Console.WriteLine("6. The Respiratory System");
-                    Console.WriteLine("    Purpose: .");
-                    Console.WriteLine("    Parts: .");
+                    Console.WriteLine("    Purpose: Gas exchange in blood: carbon dioxide for oxygen.");
+                    Console.WriteLine("    Parts: Lungs, trachea, upper respiratory tract.");
                     Console.WriteLine("7. The Digestive System");
-                    Console.WriteLine("    Purpose: .");
-                    Console.WriteLine("    Parts: .");
+                    Console.WriteLine("    Purpose: To break down food. Absorb nutrients and building blocks.");
+                    Console.WriteLine("    Parts: Mouth, esophagus, stomach, small intestine, large intestine, accessory organs.");
                     Console.WriteLine("8. The Immune System");
-                    Console.WriteLine("    Purpose: .");
-                    Console.WriteLine("    Parts: .");
+                    Console.WriteLine("    Purpose: Identify, mount a defense against, and attack to destroy pathogens.");
+                    Console.WriteLine("    Parts: Lymphocytes and leukocytes.");
                     Console.WriteLine("\nAre you finished reviewing? Press Enter to return to the main menu.");
                     Console.ReadLine(); 
                     break;
@@ -118,9 +119,16 @@ public class RunApplication
                     {
                         var newMultChoice = new MultChoice("", 0);
                         newMultChoice.GenerateRandomQuestion(questionNumber);
-                        gamePoints = 5;
-                        newMultChoice.SetPoints(gamePoints);
-                        games.Add(newMultChoice);
+                        if (newMultChoice.IsAnswerCorrect())
+                        {
+                            gamePoints = 5;
+                            newMultChoice.SetPoints(gamePoints);
+                            games.Add(newMultChoice);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Incorrect answer. No points awarded.");
+                        }
                     }
                     else
                     {
