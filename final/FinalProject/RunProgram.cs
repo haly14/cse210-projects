@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.CompilerServices;
 public class RunApplication
 {
     private List<Application> games;
@@ -7,7 +8,6 @@ public class RunApplication
     public RunApplication()
     {
         games = new List<Application>();
-        LoadGames();
     }
 
     public void Run()
@@ -18,13 +18,9 @@ public class RunApplication
     private void DisplayMenu()
     {
         Console.WriteLine($"\nYou have {CalculateTotalPoints()} points.");
-        Console.WriteLine("\nApplication Options:");
+        Console.WriteLine("\nPlease select an option from the menu below: ");
         Console.WriteLine("    1. Play New Game");
-        Console.WriteLine("    2. List Quiz Answers");
-        Console.WriteLine("    3. Save Quiz Answers");
-        Console.WriteLine("    4. Load Quiz Answers");
-        Console.WriteLine("    5. Record Answer");
-        Console.WriteLine("    6. Quit");
+        Console.WriteLine("    2. Quit");
         Console.Write("Select a choice from the menu: ");
 
         if (int.TryParse(Console.ReadLine(), out int choice))
@@ -35,18 +31,6 @@ public class RunApplication
                     PlayNewGame();
                     break;
                 case 2:
-                    ListGames();
-                    break;
-                case 3:
-                    SaveGames();
-                    break;
-                case 4:
-                    LoadGames();
-                    break;
-                case 5:
-                    RecordEvent();
-                    break;
-                case 6:
                     return;
                 default:
                     Console.WriteLine("Invalid choice.");
@@ -71,39 +55,76 @@ public class RunApplication
 
         if (int.TryParse(Console.ReadLine(), out int gameTypeChoice))
         {
-            Console.Write("Question 1: ");
-            string userAnswer = Console.ReadLine();
 
-            Console.Write("What is the amount of points associated with this goal? ");
-            if (int.TryParse(Console.ReadLine(), out int gamePoints))
+            int gamePoints;
+            string userAnswer;
+
+            switch (gameTypeChoice)
             {
-                Application newGame;
+                case 1:
+                    Console.Write("Multiple Choice Question 1: ");
+                    userAnswer = Console.ReadLine();
+                    gamePoints = 5;
+                    var newMultChoice = new MultChoice(userAnswer, gamePoints);
+                    games.Add(newMultChoice);
+                    break;
+                case 2:
+                    Console.Write("Matching Question 1: ");
+                    userAnswer = Console.ReadLine();
+                    gamePoints = 5;
+                    var newMatching = new Matching(userAnswer, gamePoints);
+                    games.Add(newMatching);
+                    break;
+                case 3:
+                    Console.WriteLine("\nPlease select an option from the menu below: ");
+                    Console.WriteLine("    1. Complete New Short Answer Question");
+                    Console.WriteLine("    2. List Quiz Answers");
+                    Console.WriteLine("    3. Save Quiz Answers");
+                    Console.WriteLine("    4. Load Quiz Answers");
+                    Console.WriteLine("    5. Quit");
+                    Console.Write("Select a choice from the menu: ");
 
-                switch (gameTypeChoice)
-                {
-                    case 1:
-                        newGame = new MultChoice(userAnswer, gamePoints);
-                        break;
-                    case 2:
-                        newGame = new Matching(userAnswer, gamePoints);
-                        break;
-                    case 3:
-                        newGame = new ShortAnswerQuiz(userAnswer, gamePoints);
-                        Console.WriteLine("Invalid input. Please enter valid integers for target count and bonus points.");
-                        return;
-                    default:
-                        Console.WriteLine("Invalid choice.");
-                        return;
-                }
-
-                games.Add(newGame);
-
-                Console.WriteLine("Game completed successfully.");
+                    if (int.TryParse(Console.ReadLine(), out int choice))
+                    {
+                        switch (choice)
+                        {
+                            case 1:
+                                Console.Write("Short Answer Question 1: ");
+                                userAnswer = Console.ReadLine();
+                                gamePoints = 10;
+                                var newShortAnswerQuiz = new ShortAnswerQuiz(userAnswer, gamePoints);
+                                games.Add(newShortAnswerQuiz);
+                                break;
+                            case 2:
+                                ListShortAnswerQuizzes();
+                                break;
+                            case 3:
+                                SaveShortAnswerQuizzes();
+                                break;
+                            case 4:
+                                LoadShortAnswerQuizzes();
+                                break;
+                            case 5:
+                                return;
+                            default:
+                                Console.WriteLine("Invalid choice.");
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid input. Please enter a valid integer.");
+                    }
+                    
+                    return;
+                default:
+                    Console.WriteLine("Invalid choice.");
+                    return;
             }
-            else
-            {
-                Console.WriteLine("Invalid input. Please enter a valid integer for goal points.");
-            }
+
+            Console.WriteLine("Game recorded! Points updated.");
+            UpdateTotalPoints();
+
         }
         else
         {
@@ -111,7 +132,7 @@ public class RunApplication
         }
     }
 
-    private void ListGames()
+    private void ListShortAnswerQuizzes()
     {
         Console.WriteLine("\nThe games are:");
 
@@ -128,61 +149,23 @@ public class RunApplication
         }
     }
 
-    private void SaveGames()
+    private void SaveShortAnswerQuizzes()
     {
-        Console.Write("\nWhat is the filename for the goal file? ");
+        Console.Write("\nWhat is the filename for the Short Answer Quiz file? ");
         string filename = Console.ReadLine();
-        SaveLoadGames saveLoadGames = new SaveLoadGames();
-        saveLoadGames.SaveGames(filename, CalculateTotalPoints(), ListGames);
-        Console.WriteLine("Games saved successfully.");
+        List<ShortAnswerQuiz> shortAnswerQuizzes = games.OfType<ShortAnswerQuiz>().ToList();
+        saveLoadGames.SaveGames(filename, shortAnswerQuizzes);
+        Console.WriteLine("Short Answer Quizzes saved successfully.");
     }
 
-    private void LoadGames()
+    private void LoadShortAnswerQuizzes()
     {
-        Console.Write("\nWhat is the filename for the goal file? ");
+        Console.Write("\nWhat is the filename for the Short Answer Quiz file? ");
         string filename = Console.ReadLine();
-        List<Application> loadedGames = saveLoadGames.LoadGames(filename);
-        games.Clear();
-        games.AddRange(loadedGames);
-        Console.WriteLine("Games loaded successfully.");
-    }
-
-    private void RecordEvent(string userAnswer = null)
-    {
-        if (userAnswer == null)
-        {
-            Console.WriteLine("\nWhich game did you play? ");
-            userAnswer = Console.ReadLine();
-        }
-
-        var game = games.Find(g => g.Answer == userAnswer);
-        if (game != null)
-        {
-            bool correctAnswer;
-            
-            if (game is MultChoice || game is Matching)
-            {
-                Console.Write($"Is the answer correct? (yes/no): ");
-                correctAnswer = Console.ReadLine()?.Trim().ToLower() == "yes";
-            }
-            else if (game is ShortAnswerQuiz)
-            {
-                correctAnswer = true;
-            }
-            else
-            {
-                Console.WriteLine("Unsupported game type.");
-                return;
-            }
-
-            game.MarkComplete(correctAnswer);
-            Console.WriteLine($"Game recorded! {correctAnswer} - {game.OriginalPoints} points.");
-            UpdateTotalPoints();
-        }
-        else
-        {
-            Console.WriteLine("Game not found!");
-        }
+        List<ShortAnswerQuiz> loadedShortAnswerQuizzes = saveLoadGames.LoadShortAnswerQuizzes(filename);
+        games.RemoveAll(g => g is ShortAnswerQuiz); // Remove existing ShortAnswerQuiz instances
+        games.AddRange(loadedShortAnswerQuizzes);
+        Console.WriteLine("Short Answer Quizzes loaded successfully.");
     }
 
     private void UpdateTotalPoints()

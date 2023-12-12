@@ -4,24 +4,15 @@ using System.IO;
 
 public class SaveLoadGames
 {
-    public void SaveGames(string fileName, int userPoints, List<Application> gamesList)
+    public void SaveGames(string fileName, List<ShortAnswerQuiz> shortAnswerQuizzes)
     {
         try
         {
             using (StreamWriter writer = new StreamWriter(fileName))
             {
-                writer.WriteLine(userPoints);
-                foreach (Application game in gamesList)
+                foreach (ShortAnswerQuiz shortAnswerQuiz in shortAnswerQuizzes)
                 {
-                    string gameLine;
-                    if (game is ShortAnswerQuiz shortAnswerQuiz)
-                    {
-                        gameLine = $"{game.GetType().Name}:{game.Answer},{shortAnswerQuiz.CompletedCount}";
-                    }
-                    else
-                    {
-                        gameLine = $"{game.GetType().Name}:{game.Answer}";
-                    }
+                    string gameLine = $"{shortAnswerQuiz.GetType().Name}:{shortAnswerQuiz.Answer},{shortAnswerQuiz.CompletedCount}";
                     writer.WriteLine(gameLine);
                 }
             }
@@ -33,38 +24,36 @@ public class SaveLoadGames
         }
     }
 
-    public List<Application> LoadGames(string fileName)
+    public List<ShortAnswerQuiz> LoadShortAnswerQuizzes(string fileName)
     {
-        List<Application> loadedGames = new List<Application>();
+        List<ShortAnswerQuiz> loadedShortAnswerQuizzes = new List<ShortAnswerQuiz>();
 
         try
         {
             using (StreamReader reader = new StreamReader(fileName))
             {
-                int userPoints = int.Parse(reader.ReadLine());
-
                 while (!reader.EndOfStream)
                 {
                     string gameLine = reader.ReadLine();
-                    Application game = CreateGameFromLine(gameLine);
-                    if (game != null)
+                    ShortAnswerQuiz shortAnswerQuiz = CreateShortAnswerQuizFromLine(gameLine);
+                    if (shortAnswerQuiz != null)
                     {
-                        loadedGames.Add(game);
+                        loadedShortAnswerQuizzes.Add(shortAnswerQuiz);
                     }
                 }
             }
 
-            Console.WriteLine($"Games loaded from {fileName}.");
+            Console.WriteLine($"Short Answer Quizzes loaded from {fileName}.");
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error loading games: {ex.Message}");
+            Console.WriteLine($"Error loading Short Answer Quizzes: {ex.Message}");
         }
 
-        return loadedGames;
+        return loadedShortAnswerQuizzes;
     }
 
-    private Application CreateGameFromLine(string gameLine)
+    private ShortAnswerQuiz CreateShortAnswerQuizFromLine(string gameLine)
     {
         try
         {
@@ -77,35 +66,13 @@ public class SaveLoadGames
 
                 switch (gameType)
                 {
-                    case "MultChoice":
-                        string[] simpleParts = gameDetails.Split(',');
-                        if (simpleParts.Length == 3 && int.TryParse(simpleParts[1], out int simplePoints))
-                        {
-                            return new MultChoice(simpleParts[0], simplePoints);
-                        }
-                        else
-                        {
-                            Console.WriteLine($"Invalid format for MultChoice: {gameLine}");
-                        }
-                        break;
-
-                    case "Matching":
-                        string[] eternalParts = gameDetails.Split(',');
-                        if (eternalParts.Length == 3 && int.TryParse(eternalParts[1], out int eternalPoints))
-                        {
-                            return new Matching(eternalParts[0], eternalPoints);
-                        }
-                        else
-                        {
-                            Console.WriteLine($"Invalid format for Matching: {gameLine}");
-                        }
-                        break;
-
                     case "ShortAnswerQuiz":
                         string[] quizParts = gameDetails.Split(',');
                         if (quizParts.Length == 2 && int.TryParse(quizParts[1], out int quizPoints))
                         {
-                            return new ShortAnswerQuiz(quizParts[0], quizPoints);
+                            ShortAnswerQuiz shortAnswerQuiz = new ShortAnswerQuiz(quizParts[0], quizPoints);
+                            shortAnswerQuiz.CompletedCount = int.Parse(quizParts[1]);
+                            return shortAnswerQuiz;
                         }
                         else
                         {
@@ -132,7 +99,7 @@ public class SaveLoadGames
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error creating game from line: {ex.Message}");
+            Console.WriteLine($"Error creating ShortAnswerQuiz from line: {ex.Message}");
         }
 
         return null;
