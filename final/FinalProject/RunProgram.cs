@@ -17,10 +17,24 @@ public class RunApplication
 
     private void DisplayMenu()
     {
+        Console.WriteLine("\nWelcome to the Anatomy Learning Application!");
+        Console.WriteLine("\nThis application will help you review the 8 major body systems studied in Anatomy: ");
+        Console.WriteLine("    1. The Integumentary System");
+        Console.WriteLine("    2. The Skeletal System");
+        Console.WriteLine("    3. The Muscular System");
+        Console.WriteLine("    4. The Nervous System");
+        Console.WriteLine("    5. The Circulatory System");
+        Console.WriteLine("    6. The Respiratory System");
+        Console.WriteLine("    7. The Digestive System");
+        Console.WriteLine("    8. The Immune System");
+        Console.WriteLine("\nPlease remember the number associated with the body system that you want to study.");
+        Console.WriteLine("You will use the number to select the associated question later on.");
+
         Console.WriteLine($"\nYou have {CalculateTotalPoints()} points.");
         Console.WriteLine("\nPlease select an option from the menu below: ");
-        Console.WriteLine("    1. Play New Game");
-        Console.WriteLine("    2. Quit");
+        Console.WriteLine("    1. Major Body Systems Overview");
+        Console.WriteLine("    2. Play New Game");
+        Console.WriteLine("    3. Quit");
         Console.Write("Select a choice from the menu: ");
 
         if (int.TryParse(Console.ReadLine(), out int choice))
@@ -28,9 +42,35 @@ public class RunApplication
             switch (choice)
             {
                 case 1:
-                    PlayNewGame();
+                    Console.WriteLine("1. The Integumentary System");
+                    Console.WriteLine("    Purpose: .");
+                    Console.WriteLine("    Parts: .");
+                    Console.WriteLine("2. The Skeletal System");
+                    Console.WriteLine("    Purpose: .");
+                    Console.WriteLine("    Parts: .");
+                    Console.WriteLine("3. The Muscular System");
+                    Console.WriteLine("    Purpose: .");
+                    Console.WriteLine("    Parts: .");
+                    Console.WriteLine("4. The Nervous System");
+                    Console.WriteLine("    Purpose: .");
+                    Console.WriteLine("    Parts: .");
+                    Console.WriteLine("5. The Circulatory System");
+                    Console.WriteLine("    Purpose: .");
+                    Console.WriteLine("    Parts: .");
+                    Console.WriteLine("6. The Respiratory System");
+                    Console.WriteLine("    Purpose: .");
+                    Console.WriteLine("    Parts: .");
+                    Console.WriteLine("7. The Digestive System");
+                    Console.WriteLine("    Purpose: .");
+                    Console.WriteLine("    Parts: .");
+                    Console.WriteLine("8. The Immune System");
+                    Console.WriteLine("    Purpose: .");
+                    Console.WriteLine("    Parts: .");
                     break;
                 case 2:
+                    PlayNewGame();
+                    break;
+                case 3:
                     return;
                 default:
                     Console.WriteLine("Invalid choice.");
@@ -134,7 +174,7 @@ public class RunApplication
 
     private void ListShortAnswerQuizzes()
     {
-        Console.WriteLine("\nThe games are:");
+        Console.WriteLine("\nPreviously saved short answer responses:");
 
         for (int i = 0; i < games.Count; i++)
         {
@@ -163,7 +203,7 @@ public class RunApplication
         Console.Write("\nWhat is the filename for the Short Answer Quiz file? ");
         string filename = Console.ReadLine();
         List<ShortAnswerQuiz> loadedShortAnswerQuizzes = saveLoadGames.LoadShortAnswerQuizzes(filename);
-        games.RemoveAll(g => g is ShortAnswerQuiz); // Remove existing ShortAnswerQuiz instances
+        games.RemoveAll(g => g is ShortAnswerQuiz);
         games.AddRange(loadedShortAnswerQuizzes);
         Console.WriteLine("Short Answer Quizzes loaded successfully.");
     }
