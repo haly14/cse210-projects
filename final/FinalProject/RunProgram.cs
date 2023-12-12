@@ -24,6 +24,13 @@ public class RunApplication
         Console.WriteLine("    8. The Immune System");
         Console.WriteLine("\nPlease remember the number associated with the body system that you want to study.");
         Console.WriteLine("You will use the number to select the associated question later on.");
+        Console.WriteLine("\nThe Main Menu will have the following 3 options:");
+        Console.WriteLine("    1. Major Body Systems Overview");
+        Console.WriteLine("    2. Play New Game");
+        Console.WriteLine("    3. Quit");
+        Console.WriteLine("Select Option 1 to review a short description of each major body system.");
+        Console.WriteLine("Select Option 2 to play a review game (Multiple Choice, Matching, or Short Answer Quiz).");
+        Console.WriteLine("Select Option 3 to quit the application.");
         Console.WriteLine("\nPress enter when you are finished reading the instructions to pull up the Main Menu.");
         Console.ReadLine(); 
         DisplayMenu();
@@ -32,7 +39,7 @@ public class RunApplication
     private void DisplayMenu()
     {
         Console.WriteLine($"\nYou currently have {CalculateTotalPoints()} points.");
-        Console.WriteLine("\nPlease select an option from the menu below: ");
+        Console.WriteLine("\nAnatomy Learning Application! Main Menu: ");
         Console.WriteLine("    1. Major Body Systems Overview");
         Console.WriteLine("    2. Play New Game");
         Console.WriteLine("    3. Quit");
