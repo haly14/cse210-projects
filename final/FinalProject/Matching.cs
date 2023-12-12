@@ -30,7 +30,7 @@ public class Matching : Application
                     }
                     else
                     {
-                        Console.WriteLine($"Incorrect. The correct answer is '{terms[i][0]}'.");
+                        Console.WriteLine($"Incorrect. The correct answer is '{correctAnswers[i]}'.");
                     }
                 }
                 else
