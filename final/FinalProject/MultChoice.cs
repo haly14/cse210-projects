@@ -1,6 +1,7 @@
 using System;
 public class MultChoice : Application
 {
+    
     public MultChoice(string answer, int points) : base(answer, points)
     {
         OriginalPoints = points;
@@ -29,7 +30,6 @@ public class MultChoice : Application
                 Console.WriteLine("    d. adipose gland");
                 Console.Write("\nPlease enter a one letter answer (no caps): ");
                 userAnswer = Console.ReadLine();
-                UserAnswer = userAnswer;
                 
                 if (userAnswer.ToLower() == "c")
                 {
@@ -50,7 +50,6 @@ public class MultChoice : Application
                 Console.WriteLine("    d. ligaments");
                 Console.Write("\nPlease enter a one letter answer (no caps): ");
                 userAnswer = Console.ReadLine();
-                UserAnswer = userAnswer;
 
                 if (userAnswer.ToLower() == "d")
                 {
@@ -72,7 +71,6 @@ public class MultChoice : Application
                 Console.WriteLine("    d. humerus");
                 Console.Write("\nPlease enter a one letter answer (no caps): ");
                 userAnswer = Console.ReadLine();
-                UserAnswer = userAnswer;
 
                 if (userAnswer.ToLower() == "c")
                 {
@@ -94,7 +92,6 @@ public class MultChoice : Application
                 Console.WriteLine("    d. motor neurons");
                 Console.Write("\nPlease enter a one letter answer (no caps): ");
                 userAnswer = Console.ReadLine();
-                UserAnswer = userAnswer;
 
                 if (userAnswer.ToLower() == "a")
                 {
@@ -116,7 +113,6 @@ public class MultChoice : Application
                 Console.WriteLine("    d. right atrium");
                 Console.Write("\nPlease enter a one letter answer (no caps): ");
                 userAnswer = Console.ReadLine();
-                UserAnswer = userAnswer;
 
                 if (userAnswer.ToLower() == "b")
                 {
@@ -138,7 +134,6 @@ public class MultChoice : Application
                 Console.WriteLine("    d. trachea");
                 Console.Write("\nPlease enter a one letter answer (no caps): ");
                 userAnswer = Console.ReadLine();
-                UserAnswer = userAnswer;
 
                 if (userAnswer.ToLower() == "d")
                 {
@@ -160,7 +155,6 @@ public class MultChoice : Application
                 Console.WriteLine("    d. the stomach");
                 Console.Write("\nPlease enter a one letter answer (no caps): ");
                 userAnswer = Console.ReadLine();
-                UserAnswer = userAnswer;
 
                 if (userAnswer.ToLower() == "b")
                 {
@@ -182,7 +176,6 @@ public class MultChoice : Application
                 Console.WriteLine("    d. helper T cells");
                 Console.Write("\nPlease enter a one letter answer (no caps): ");
                 userAnswer = Console.ReadLine();
-                UserAnswer = userAnswer;
 
                 if (userAnswer.ToLower() == "a")
                 {
@@ -199,8 +192,9 @@ public class MultChoice : Application
                 Console.WriteLine("Invalid question number.");
                 userAnswer = Console.ReadLine();
                 UserAnswer = userAnswer;
-                break;
+                return;
         }
+        
     }
     public void SetPoints(int points)
     {

@@ -51,8 +51,8 @@ public class RunApplication
             switch (choice)
             {
                 case 1:
-                    Console.WriteLine("1. The Integumentary System");
-                    Console.WriteLine("    Purpose: Protection.");
+                    Console.WriteLine("\n1. The Integumentary System");
+                    Console.WriteLine("    Purpose: Protection against pathogens.");
                     Console.WriteLine("    Parts: Skin, hair, nails, glands, nerve endings.");
                     Console.WriteLine("2. The Skeletal System");
                     Console.WriteLine("    Purpose: Structural support, protection, movement.");
